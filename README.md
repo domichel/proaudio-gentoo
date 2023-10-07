@@ -67,7 +67,7 @@ and to add 2 lines in `/etc/portage/packages.accept_keywords`:
 media-sound/ladish **
 media-sound/lash **
 ```
-Amoung other goodies, proaudion contain many ebuilds related
+Amoung other goodies, proaudio contain many ebuilds related
 to sound engineering.
 
 As exemple the jkmeter and the new ebumeter which are the best
