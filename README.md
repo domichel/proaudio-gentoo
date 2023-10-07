@@ -71,7 +71,7 @@ Amoung other goodies, proaudio contain many ebuilds related
 to sound engineering.
 
 As exemple the jkmeter and the new ebumeter which are the best
-tools of today to do the mestering. They was build from the
+tools of today to do the mastering. They was build from the
 ideas of Bob Katz, the best mastering expert in exercise.
 Visit his blog or read his book "Mastering Audio - the art
 and the science third edition". End of the pub, but trust me,
