@@ -8,9 +8,83 @@ on the old proaudio overlay on tuxfamily.org.
 Currently, I am cleaning up the mess in the old overlay.
 When done, I will import the result here.
 
-It is allready an attic with working ebuild (at the time
-of their import) I don't have the time to maintain at:
+Pro Audio on Gentoo
+===================
+We have several repositories we can use. The first one is
+the main tree.
+
+The second one is audio-overlay at
+    https://github.com/gentoo-audio/audio-overlay
+
+The third one is the overlay of decibel Linux at
+    https://github,com/Gentoo-Music-and-Audio-Technology/gentoostudio
+
+Another one is os-gentoo-overlay which provide LADI
+related stuffs for use on gentoo:
+    https://github.com/LADI/os-gentoo-overlay
+
+Last but not least is this one at
+    https://github.com/domichel/proaudio-gentoo
+
+That last overlay is the only one that provide a solution
+to media-sound/ladish blocking media-sound/lash, Lash is
+in the main tree and all the other audio related overlays
+do have blockings in the form of a variation of
+    lash? ( !media-sound/lash )
+That imply they will block all the lash related software from
+the main tree.
+
+Proaudio-gentoo provide a fake media-sound/lash ebuild that
+install nothing but only depend on media-sound/ladish, That
+terrible hack solve these blocking. It also contain other 
+ladish related ebuilds that doesn't conflict with the main
+tree lash. In order to profit of that, it is
+just to give proaudio-gentoo a higher piority,
+as example in
+
+# /etc/portage/repos.conf/eselect-repo.conf
+
+[audio-overlay]
+location = /var/db/repos/audio-overlay
+sync-type = git
+sync-uri = https://github.com/gentoo-mirror/audio-overlay.git
+priority = 800
+
+[GenCool]
+location = /var/db/repos/GenCool
+sync-type = git
+sync-uri = https://github.com/domichel/GenCool.git
+priority = 950
+
+[proaudio]
+location = /var/db/repos/proaudio
+sync-type = svn
+sync-uri = svn://svn.tuxfamily.org/svnroot/proaudio/proaudio/trunk/overlays/proaudio
+priority = 900
+
+Amoung other stuffs, proaudion contain many ebuilds related
+to sound engineering.
+As exemple the jkmeter and the new ebumeter which are the best
+tools of today to do the mestering, They was build from the
+ideas of Bob Katz, the best mastering expert in exercise.
+Visit his blog or read his book "Mastering Audio - the art
+and the science third edition". End of the pub, but trust me,
+to really master the process of digital recording and
+mastering, more technical knowledge is needed than with the
+analog technology, and Bob Katz master and explain every
+bit of it.
+
+It is also an attic with working ebuilds (at the time
+of their import) from the original pro-audio overlay.
+I just don't have the time or the feeling to maintain them,
+or they are historical software:
 
     https://github.com/domichel/proaudio-attic
 
 Enjoy!
+
+P.S.: It is a personnal overlay, GenCool, where I maintain a
+special version of the guitarix ebuild that install dk-builder,
+a tool that will be best used with some knowledge into electronics
+and can be used for the development of guitarix and LV2 plugins.
+See https://github.com/domichel/GenCool.git
