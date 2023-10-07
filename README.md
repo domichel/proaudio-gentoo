@@ -30,7 +30,7 @@ That proaudio-gentoo overlay is the only one that provide a solution
 to media-sound/ladish blocking media-sound/lash. Lash is
 in the main tree and all the other audio related overlays
 do have blockings in the form of variations of
-    lash? ( !media-sound/lash )
+    `lash? ( !media-sound/lash )`
 That imply they will block all the lash related software from
 the main tree.
 
@@ -38,9 +38,9 @@ Proaudio-gentoo provide a fake media-sound/lash ebuild that
 install nothing but only depend on media-sound/ladish, That
 terrible hack solve these blockings. It also contain other 
 ladish related ebuilds that doesn't conflict with the main
-tree lash ebuild. In order to profit of that, a simple way is
+tree lash ebuild. In order to take profit of that, a simple way is
 just to give proaudio-gentoo a higher piority than the main tree
-and the overlays with ladish blockinng lash, as example in
+and the overlays with ladish blocking lash, as example in
 ```
 # /etc/portage/repos.conf/eselect-repo.conf
 
