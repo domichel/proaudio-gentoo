@@ -62,6 +62,11 @@ sync-type = svn
 sync-uri = svn://svn.tuxfamily.org/svnroot/proaudio/proaudio/trunk/overlays/proaudio
 priority = 900
 ```
+and to add 2 lines in `/etc/portage/packages.accept_keywords`:
+```
+media-sound/ladish **
+media-sound/lash **
+```
 Amoung other goodies, proaudion contain many ebuilds related
 to sound engineering.
 
