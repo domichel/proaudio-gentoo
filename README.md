@@ -26,22 +26,22 @@ related stuffs for use on gentoo:
 Last but not least is this one at
     https://github.com/domichel/proaudio-gentoo
 
-That last overlay is the only one that provide a solution
-to media-sound/ladish blocking media-sound/lash, Lash is
+That proaudio-gentoo overlay is the only one that provide a solution
+to media-sound/ladish blocking media-sound/lash. Lash is
 in the main tree and all the other audio related overlays
-do have blockings in the form of a variation of
+do have blockings in the form of variations of
     lash? ( !media-sound/lash )
 That imply they will block all the lash related software from
 the main tree.
 
 Proaudio-gentoo provide a fake media-sound/lash ebuild that
 install nothing but only depend on media-sound/ladish, That
-terrible hack solve these blocking. It also contain other 
+terrible hack solve these blockings. It also contain other 
 ladish related ebuilds that doesn't conflict with the main
-tree lash. In order to profit of that, it is
-just to give proaudio-gentoo a higher piority,
-as example in
-
+tree lash ebuild. In order to profit of that, a simple way is
+just to give proaudio-gentoo a higher piority than the main tree
+and the overlays with ladish blockinng lash, as example in
+```
 # /etc/portage/repos.conf/eselect-repo.conf
 
 [audio-overlay]
@@ -61,11 +61,12 @@ location = /var/db/repos/proaudio
 sync-type = svn
 sync-uri = svn://svn.tuxfamily.org/svnroot/proaudio/proaudio/trunk/overlays/proaudio
 priority = 900
-
-Amoung other stuffs, proaudion contain many ebuilds related
+```
+Amoung other goodies, proaudion contain many ebuilds related
 to sound engineering.
+
 As exemple the jkmeter and the new ebumeter which are the best
-tools of today to do the mestering, They was build from the
+tools of today to do the mestering. They was build from the
 ideas of Bob Katz, the best mastering expert in exercise.
 Visit his blog or read his book "Mastering Audio - the art
 and the science third edition". End of the pub, but trust me,
@@ -77,9 +78,8 @@ bit of it.
 It is also an attic with working ebuilds (at the time
 of their import) from the original pro-audio overlay.
 I just don't have the time or the feeling to maintain them,
-or they are historical software:
-
-    https://github.com/domichel/proaudio-attic
+or they are historical stuffs:
+https://github.com/domichel/proaudio-attic
 
 Enjoy!
 
