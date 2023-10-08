@@ -1,0 +1,14 @@
+# ChangeLog for media-plugins/vocoder-ladspa
+# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
+
+  24 Sep 2023; Dominique Michel <dominique_libre@users.sourceforge.net>
+  -vocoder-ladspa-0.3.ebuild
+  +vocoder-ladspa-0.4.ebuild: Bump to EAPI 8.
+
+  03 Mar 2011; Frieder Buerzele <evermind@tuxfamily.org>
+  vocoder-ladspa-0.3.ebuild:
+  fixup libdir
+
+  17 Dec 2007; Thomas Kuther <gimpel@sonnenkinder.org> ChangeLog:
+  added a changelog
+

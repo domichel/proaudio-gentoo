@@ -1,0 +1,10 @@
+# ChangeLog for media-plufins/amb1-plugins
+# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
+
+*amb1-plugins-0.3.0 (04 Sep 2023)
+
+  04 Sep 2023; Dominique Michel <dominique_libre@sourceforge.net>
+  +amb2-plugins-0.3.0.ebuild
+  +files/amb1-plugins-0.3.0_Makefile.patch
+  +metadata.xml
+  initial import

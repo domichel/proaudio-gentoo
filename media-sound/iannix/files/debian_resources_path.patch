@@ -1,0 +1,19 @@
+Description: use FSH path for application resources
+ rather than looking for the file in /usr/bin/Tools,
+ they should be searched for in /usr/lib/iannix/Tools
+Author: IOhannes m zmölnig <umlaeute@debian.org>
+Last-Update: 2017-05-19
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- iannix.orig/iannixapp.cpp
++++ iannix/iannixapp.cpp
+@@ -83,7 +83,8 @@
+     //Start
+     setHelp();
+ 
+-    QDir pathApplicationDir = QDir(QCoreApplication::applicationDirPath()).absolutePath();
++    QDir pathApplicationDir = QDir(QCoreApplication::applicationDirPath() +
++"/../lib/iannix/").absolutePath();
+ #ifdef Q_OS_MAC
+     pathApplicationDir.cdUp();
+     pathApplicationDir.cdUp();

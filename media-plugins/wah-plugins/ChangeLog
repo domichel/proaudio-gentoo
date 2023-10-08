@@ -1,0 +1,18 @@
+# ChangeLog for media-plugins/wah-plugins
+# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
+
+*wah-plugins-0.1.0 (24 Sep 2023)
+
+  24 Sep 2023; Dominique Michel <dominique_libre@users.sourceforge.net>
+  -wah-plugins-0.0.2.ebuild,
+  +wah-plugins-0.1.0.ebuild: EAPI 8 bump; use sed instead of esed
+
+  01 May 2011; Gavin Pryke <gavinlee303@googlemail.com>
+  wah-plugins-0.0.2.ebuild:
+  update HOMEPAGE and SRC_URI
+
+*wah-plugins-0.0.2 (08 Apr 2010)
+
+  08 Apr 2010; Florian Faber <faber@faberman.de>
+  +wah-plugins-0.0.2.ebuild, +metadata.xml:
+  initial ebuild

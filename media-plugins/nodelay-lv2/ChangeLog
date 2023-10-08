@@ -1,0 +1,17 @@
+# ChangeLog for media-plugin/nodelay-lv2
+# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
+
+  24 Sep 2023; Dominique Michel <dominique_libre@users.sourceforge.net>
+  nodelay-lv2-9999.ebuild: fix striping; install in LV2DIR.
+
+  03 Sep 2023; Dominique Michel <dominique_libre@users.sourceforge.net>
+  nodelay-lv2-9999.ebuild: EAPI bump; use https instead of git.
+
+  16 Dec 2021; Dominique Michel <dominique_libre@users.sourceforge.net>
+  nodelay-lv2-9999.ebuild: removed outdated base eclass.
+
+*nodelay-lv2-9999 (1 Apr 2014)
+
+  1 Apr 2014; Dominique Michel <dominique_libre@users.sourceforge.net>
+  +nodelay-lv2-9999.ebuild, +metadata.xml, +ChangeLog;
+  Initial ebuild.

@@ -1,0 +1,24 @@
+# ChangeLog for media-sound/yatm
+# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
+
+*yatm-0.9 (07 Oct 2023)
+
+  07 Oct 2023; Dominique Michel <dominique_libre@users.sourceforge.net>
+  -yatm-0.6.ebuild;
+  +yatm-0.9.ebuild: version bump; add cmake eclass; change homepage
+  and URI to github.
+
+  01 Jan 2022; Dominique Michel <dominique_libre@users.sourceforge.net>
+  yatm-0.6.ebuild: EAPI 8 bump; remove non needed eclasses.
+  +files/use_builtin.patch: use true builtin.
+
+*yatm-0.6 (04 Apr 2013)
+
+  04 Apr 2013; Gavin Pryke (gavlee) <gavinlee303@googlemail.com>
+  -yatm-0.4.ebuild, +yatm-0.6.ebuild:
+  version bump, EAPI=5, inherit autotools-utils, adjust deps, drop sparc
+  keyword, remove old.
+
+  17 Dec 2007; Thomas Kuther <gimpel@sonnenkinder.org> ChangeLog:
+  added a changelog
+

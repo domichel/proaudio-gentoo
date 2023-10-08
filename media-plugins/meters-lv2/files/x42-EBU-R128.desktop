@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=X42 EBU meter
+Type=Application
+Comment=A collection of audio level meters with GUI in LV2 plugin format
+Exec=x42-meter 7
+TryExec=x42-meter 7
+Icon=x42-meter
+Categories=AudioVideo;Audio;X-Vu-Meters;

@@ -1,0 +1,28 @@
+--- source/Makefile.orig	2019-08-26 22:52:22.471712823 +0200
++++ source/Makefile	2019-08-26 22:56:43.026703316 +0200
+@@ -17,22 +17,21 @@
+ #
+ # ----------------------------------------------------------------------------
+ 
+-
++CXX ?= g++
+ PREFIX ?= /usr/local
+ BINDIR ?= $(PREFIX)/bin
+ SHARED ?= $(PREFIX)/share/zita-rev1
+ 
+ VERSION = 0.2.2
+ CPPFLAGS += -MMD -MP -DVERSION=\"$(VERSION)\" -DSHARED=\"$(SHARED)\"
+-CXXFLAGS += -O2 -Wall -ffast-math -pthread
+-CXXFLAGS += -march=native
++CXXFLAGS += -Wall -ffast-math -pthread
+ 
+ 
+ all:	zita-rev1
+ 
+ 
+ ZITA-REV1_O = zita-rev1.o styles.o jclient.o mainwin.o png2img.o guiclass.o rotary.o reverb.o pareq.o
+-zita-rev1:	CPPFLAGS += $(shell pkgconf --cflags freetype2)
++zita-rev1:	CPPFLAGS += $(shell pkg-config --cflags freetype2)
+ zita-rev1:	LDLIBS += -lclxclient -lclthreads -lpng -lcairo -ljack -lpthread -lXft -lX11 -lrt
+ zita-rev1:	$(ZITA-REV1_O) 
+ 	$(CXX) $(LDFLAGS) -o $@ $(ZITA-REV1_O) $(LDLIBS)

@@ -1,0 +1,16 @@
+--- iannix-9999/iannix.desktop.old	2021-12-26 22:23:00.901829812 +0100
++++ iannix-9999/iannix.desktop	2021-12-26 22:25:49.803823649 +0100
+@@ -1,10 +1,10 @@
+ [Desktop Entry]
+ Name=IanniX
+ Comment=Graphical sequencer for digital art
+-Exec=IanniX
+-Icon=/usr/share/pixmaps/IanniX.png
++Exec=iannix
++Icon=/usr/share/pixmaps/iannix.png
+ Terminal=false
+ Type=Application
+ X-MultipleArgs=false
+-Categories=Audio;AudioVideoEditing;AudioVideo;Video;Qt;
++Categories=AudioVideo;Audio;AudioVideoEditing;
+ Name[en_US]=IanniX

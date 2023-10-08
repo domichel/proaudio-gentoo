@@ -1,0 +1,11 @@
+--- muse-4.1/CMakeLists.txt.orig	2022-10-02 22:23:44.597621115 +0200
++++ muse-4.1/CMakeLists.txt	2022-10-02 22:24:54.494285461 +0200
+@@ -249,7 +249,7 @@
+ # We need these always, for a few of the shared modules in the muse/core build,
+ #  even when building muse/core as static. Otherwise it can't find them on run. Tim.
+ SET(CMAKE_BUILD_WITH_INSTALL_RPATH ON)
+-SET(CMAKE_INSTALL_RPATH ${MusE_MODULES_DIR})
++SET(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/${MusE_MODULES_DIR})
+ 
+ ##
+ ## Just print a notice if this is OS X

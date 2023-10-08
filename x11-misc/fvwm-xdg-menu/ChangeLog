@@ -1,0 +1,14 @@
+# ChangeLog for x11-misc/fvwm-xdg-menu
+# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
+
+  09 Oct 2023; Dominique Michel <dominique_libre@users.sourceforge.net>
+  fvwm-xdg-menu-9999.ebuild: add xdg eclass; use einstalldocs
+
+  15 Aug 2023; Dominique Michel <dominique_libre@users.sourceforge.net>
+  fvwm-xdg-menu-9999.ebuild: Bump to EAPI 8; git-r3 use https now.
+
++ fvwm-xdg-menu-9999.ebuild
++ metadata.xml
++ ChangeLog
+  23 Apr 2014; Dominique Michel <dominique_libre@users.sourceforge.net>
+  Initial ebuild

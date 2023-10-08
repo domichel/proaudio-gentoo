@@ -1,0 +1,55 @@
+From: =?utf-8?q?IOhannes_m_zm=C3=B6lnig?= <umlaeute@debian.org>
+Date: Wed, 11 Apr 2018 00:00:00 +0200
+Subject: Use global paths for JUCE modules in UnitTests
+
+Forwarded: not-needed
+---
+ extras/UnitTestRunner/UnitTestRunner.jucer | 38 +++++++++++++++---------------
+ 1 file changed, 19 insertions(+), 19 deletions(-)
+
+--- juce.orig/extras/UnitTestRunner/UnitTestRunner.jucer
++++ juce/extras/UnitTestRunner/UnitTestRunner.jucer
+@@ -147,25 +147,24 @@
+     </VS2022>
+   </EXPORTFORMATS>
+   <MODULES>
+-    <MODULE id="juce_analytics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+-    <MODULES id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+-    <MODULES id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
+-    <MODULES id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
+-    <MODULES id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
+-    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+-    <MODULES id="juce_core" showAllCode="1" useLocalCopy="0"/>
+-    <MODULES id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
+-    <MODULES id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+-    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+-    <MODULES id="juce_events" showAllCode="1" useLocalCopy="0"/>
+-    <MODULES id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+-    <MODULES id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+-    <MODULES id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+-    <MODULES id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
+-    <MODULES id="juce_osc" showAllCode="1" useLocalCopy="0"/>
+-    <MODULE id="juce_product_unlocking" showAllCode="1" useLocalCopy="0"
+-            useGlobalPath="0"/>
+-    <MODULES id="juce_video" showAllCode="1" useLocalCopy="0"/>
++    <MODULE id="juce_analytics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULES id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULES id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULES id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULES id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULES id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULES id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULES id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULES id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULES id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULES id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULES id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULES id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULES id="juce_osc" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULE id="juce_product_unlocking" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
++    <MODULES id="juce_video" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+   </MODULES>
+   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_PLUGINHOST_LV2="1" JUCE_PLUGINHOST_VST3="1"/>
+   <LIVE_SETTINGS>

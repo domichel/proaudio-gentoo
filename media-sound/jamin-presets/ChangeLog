@@ -1,0 +1,22 @@
+# ChangeLog for media-sound/jamin-presets
+# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
+
+*jamin-presets-6.0 (23 Sep 2023)
+
+  23 Sep 2023; Dominique Michel <dominique_libre@users.sourceforge.net>
+  +jamin-presets-6.0.ebuild,
+  -jamin-presets-4.0.ebuild,
+  -jamin-presets-4.0-r1.ebuild: HOMEPAGE, license and SRC_URI fixes.
+
+*jamin-presets-4.0-r1 (19 Nov 2015)
+
+  19 Nov 2015; Gavin Pryke (gavlee) <gavinlee303@gmail.com>
+  jamin-presets-4.0.ebuild, +jamin-presets-4.0-r1.ebuild:
+  homepage dead. upload to proaudio distfiles and update SRC_URI
+
+*jamin-presets-4.0 (15 Sep 2009)
+
+  15 Sep 2009; Gavin Pryke <gavinlee303@googlemail.com>
+  +jamin-presets-4.0.ebuild, +metadata.xml:
+  initial import of jamin-presets
+

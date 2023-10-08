@@ -1,0 +1,55 @@
+--- source/Makefile.orig	2023-09-03 18:45:53.176157683 +0200
++++ source/Makefile	2023-09-03 18:47:31.064150383 +0200
+@@ -27,7 +27,7 @@
+ CXXFLAGS += -O2 -Wall
+ 
+ 
+-all:	zita-j2n zita-n2j zita-njbridge.1.gz zita-j2n.1.gz zita-n2j.1.gz
++all:	zita-j2n zita-n2j
+ 
+ 
+ ZITA-J2N_O = zita-j2n.o netdata.o jacktx.o nettx.o pxthread.o lfqueue.o zsockets.o
+@@ -46,36 +46,25 @@
+ 	$(CXX) $(LDFLAGS) -o $@ $(ZITA-N2J_O) $(LDLIBS)
+ 
+ 
+-zita-njbridge.1.gz:	zita-njbridge.1
+-	gzip -c zita-njbridge.1 > zita-njbridge.1.gz
+-
+-zita-n2j.1.gz:	zita-n2j.1
+-	gzip -c zita-n2j.1 > zita-n2j.1.gz
+-
+-zita-j2n.1.gz:	zita-j2n.1
+-	gzip -c zita-j2n.1 > zita-j2n.1.gz
+-
+-
+-
+ install:	all
+ 	install -d $(DESTDIR)$(BINDIR)
+ 	install -d $(DESTDIR)$(MANDIR)
+ 	install -m 755 zita-j2n $(DESTDIR)$(BINDIR)
+ 	install -m 755 zita-n2j $(DESTDIR)$(BINDIR)
+-	install -m 644 zita-njbridge.1.gz $(DESTDIR)$(MANDIR)
+-	install -m 644 zita-j2n.1.gz $(DESTDIR)$(MANDIR)
+-	install -m 644 zita-n2j.1.gz $(DESTDIR)$(MANDIR)
++	install -m 644 zita-njbridge.1 $(DESTDIR)$(MANDIR)
++	install -m 644 zita-j2n.1 $(DESTDIR)$(MANDIR)
++	install -m 644 zita-n2j.1 $(DESTDIR)$(MANDIR)
+ 
+ 
+ uninstall:
+ 	/bin/rm -f  $(DESTDIR)$(BINDIR)/zita-j2n
+ 	/bin/rm -f  $(DESTDIR)$(BINDIR)/zita-n2j
+-	/bin/rm -f  $(DESTDIR)$(MANDIR)/zita-njbridge.1.gz
+-	/bin/rm -f  $(DESTDIR)$(MANDIR)/zita-j2n.1.gz
+-	/bin/rm -f  $(DESTDIR)$(MANDIR)/zita-n2j.1.gz
++	/bin/rm -f  $(DESTDIR)$(MANDIR)/zita-njbridge.1
++	/bin/rm -f  $(DESTDIR)$(MANDIR)/zita-j2n.1
++	/bin/rm -f  $(DESTDIR)$(MANDIR)/zita-n2j.1
+ 
+ 
+ clean:
+-	/bin/rm -f *~ *.o *.a *.d *.so *.gz
++	/bin/rm -f *~ *.o *.a *.d *.so
+ 	/bin/rm -f zita-n2j zita-j2n
+ 

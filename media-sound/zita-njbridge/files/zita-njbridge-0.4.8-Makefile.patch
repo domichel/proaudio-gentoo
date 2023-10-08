@@ -1,0 +1,11 @@
+--- source/Makefile.old	2021-12-21 02:42:18.819461567 +0100
++++ source/Makefile	2021-12-21 02:44:00.010457874 +0100
+@@ -24,7 +24,7 @@
+ 
+ VERSION = 0.8.4
+ CPPFLAGS +=  -MMD -MP -DVERSION=\"$(VERSION)\"
+-CXXFLAGS += -O2 -Wall
++CXXFLAGS +=  -Wall
+ 
+ 
+ all:	zita-a2j zita-j2a zita-ajbridge.1.gz zita-a2j.1.gz zita-j2a.1.gz 

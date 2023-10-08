@@ -1,0 +1,18 @@
+Description: Fix compilation with Qt5.15+
+ fixed missing include of "QPainterPath"
+Author: IOhannes m zmölnig
+Origin: Debian
+Bug: https://github.com/buzzinglight/IanniX/pull/52
+Last-Update: 2020-12-09
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- iannix.orig/objects/nxcurve.h
++++ iannix/objects/nxcurve.h
+@@ -28,6 +28,7 @@
+ #include <QScriptValue>
+ #include <QVarLengthArray>
+ #include <QBitmap>
++#include <QPainterPath>
+ #include "geometry/qmuparser/muParser.h"
+ #include "nxobject.h"
+ #include "qmath.h"

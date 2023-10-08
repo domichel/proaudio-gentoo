@@ -1,0 +1,16 @@
+# ChangeLog for media-sound/4deckradio
+# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
+
+  25 Sep 2023; Dominique Michel <dominique_libre@users.sourceforge.net>
+  4deckradio-9999.ebuild: Use https for git-r3, add desktop file
+  installation.
+
+  02 Jam 2022; Dominique Michel <dominique_libre@users.sourceforge.net>
+  4deckradio-9999.ebuild: EAPI 8 bump.
+
+*4deckradio-9999 (11 Apr 2013)
+
+  11 Apr 2013; Karl Linden (lilrc) <lilrc@users.sourceforge.net>
+  +4deckradio-9999.ebuild, +metadata.xml:
+  Initial ebuild.
+

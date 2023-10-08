@@ -1,0 +1,22 @@
+From: =?utf-8?q?IOhannes_m_zm=C3=B6lnig?= <umlaeute@debian.org>
+Date: Tue, 19 Dec 2017 00:00:00 +0100
+Subject: default JUCE-module path for Projucer
+
+ On Debian we have the module-sources installed in /usr/share/juce/modules
+ and should use those if possible.
+Forwarded: not-needed
+---
+ extras/Projucer/Source/Settings/jucer_StoredSettings.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- juce.orig/extras/Projucer/Source/Settings/jucer_StoredSettings.cpp
++++ juce/extras/Projucer/Source/Settings/jucer_StoredSettings.cpp
+@@ -352,7 +352,7 @@
+     }
+     else if (key == Ids::defaultJuceModulePath)
+     {
+-        return (os == TargetOS::windows ? "C:\\JUCE\\modules" : "~/JUCE/modules");
++        return (os == TargetOS::windows ? "C:\\JUCE\\modules" : "/usr/share/juce/modules");
+     }
+     else if (key == Ids::defaultUserModulePath)
+     {

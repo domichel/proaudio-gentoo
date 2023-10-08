@@ -1,0 +1,8 @@
+# ChangeLog for media-sound/waonc
+# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
+
+*waon-9999 (07 Oct 2023)
+
+  07 Oct 2023; Dominique Michel <dominique_libre@users.sourceforge.net>
+  +waon-9999.ebuild
+  +files/waonc.png: Initial import.

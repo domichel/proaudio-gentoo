@@ -1,0 +1,23 @@
+--- AMB1-plugins-0.3.0/source/Makefile.orig	2023-09-04 18:07:43.999259204 +0200
++++ AMB1-plugins-0.3.0/source/Makefile	2023-09-04 18:10:17.334247769 +0200
+@@ -1,12 +1,12 @@
+-CPPFLAGS += -I. 
+-CXXFLAGS += -fPIC -D_REENTRANT -Wall -O2
++CPPFLAGS += -I. 
++CXXFLAGS += -fPIC -D_REENTRANT -Wall
+ 
+ 
+ OBJS = amb1tools.o dominance1.o sn3dpan1.o zrotator1.o
+ 
+ 
+ hoa1tools.so:	$(OBJS)
+-	$(CXX) -shared -o $@ $(OBJS)
++	$(CXX) $(LDFLAGS) -shared -o $@ $(OBJS)
+ 
+ 
+ install:	hoa1tools.so
+@@ -15,4 +15,3 @@
+ 
+ clean:
+ 	/bin/rm -f *~ *.o *.so
+-

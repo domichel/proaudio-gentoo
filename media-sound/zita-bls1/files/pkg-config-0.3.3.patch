@@ -1,0 +1,20 @@
+--- source/Makefile.orig	2023-04-26 00:59:16.143141503 +0200
++++ source/Makefile	2023-04-26 00:59:42.247142521 +0200
+@@ -24,8 +24,6 @@
+ 
+ VERSION = 0.3.3
+ CPPFLAGS += -MMD -MP -DVERSION=\"$(VERSION)\" -DSHARED=\"$(SHARED)\"
+-CXXFLAGS += -O2 -Wall -ffast-math -pthread 
+-CXXFLAGS += -march=native
+ 
+ 
+ all:	zita-bls1
+@@ -33,7 +31,7 @@
+ 
+ ZITA-BLS1_O = zita-bls1.o styles.o jclient.o mainwin.o png2img.o guiclass.o rotary.o \
+ 	hp3filt.o lfshelf2.o shuffler.o
+-zita-bls1:	CPPFLAGS += $(shell pkgconf --cflags freetype2)
++zita-bls1:	CPPFLAGS += $(shell pkg-config --cflags freetype2)
+ zita-bls1:	LDLIBS += -lzita-convolver -lfftw3f -lclxclient -lclthreads -ljack \
+ 	-lcairo -lpthread -lpng -lXft -lX11 -lrt
+ zita-bls1:	$(ZITA-BLS1_O)

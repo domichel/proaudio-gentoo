@@ -1,0 +1,17 @@
+# ChangeLog for media-plugin/tuna-lv2
+# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
+
+  24 Sep 2023; Dominique Michel <dominique_libre@users.sourceforge.net>
+  +files/*.desktop
+  tuna-lv2-9999.ebuild: bump to EAPI 8; install png doc + icon
+  and desktop files; fix stripping.
+
+  25 Feb 2021; Dominique Michel <dominique_libre@users.sourceforge.net>
+  +tuna-lv2-9999.ebuild: bump to EAPI7; use get_libdir for LV2DIR;
+  fix striping and repoman.
+
+*tuna-lv2-9999 (1 Apr 2014)
+
+  1 Apr 2014; Dominique Michel <dominique_libre@users.sourceforge.net>
+  +tuna-lv2-9999.ebuild, +metadata.xml, +ChangeLog;
+  Initial ebuild.

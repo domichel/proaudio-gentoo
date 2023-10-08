@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=X42 Sisco Scope
+Type=Application
+Comment=A simple LV2 oscilloscope
+Exec=x42-scope
+TryExec=x42-scope
+Icon=x42-scope
+Categories=AudioVideo;Audio;Engineering;

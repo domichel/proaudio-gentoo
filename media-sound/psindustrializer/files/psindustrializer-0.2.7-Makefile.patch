@@ -1,0 +1,11 @@
+--- psindustrializer-0.2.7/Makefile.am.orig	2021-12-31 18:53:20.087838319 +0100
++++ psindustrializer-0.2.7/Makefile.am	2021-12-31 18:55:06.534834435 +0100
+@@ -10,7 +10,7 @@
+ app_DATA = @PACKAGE@.desktop
+ appdir = $(datadir)/applications
+ appdata_DATA  = @PACKAGE@.appdata.xml
+-appdatadir = $(datadir)/appdata
++appdatadir = $(datadir)/metainfo
+ 
+ xpm_DATA = power_station_logo.xpm save-wav-22.png save-wav-32.png
+ xpmdir = $(datadir)/@PACKAGE@

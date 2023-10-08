@@ -1,0 +1,19 @@
+Description: Output doxygen-generated HTML into apiref/ folder
+ so we don't need to rename it later
+Author: IOhannes m zmölnig
+Origin: Debian
+Forwarded: not-needed
+Last-Update: 2022-08-04
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- juce.orig/docs/doxygen/Doxyfile
++++ juce/docs/doxygen/Doxyfile
+@@ -1249,7 +1249,7 @@
+ # The default directory is: html.
+ # This tag requires that the tag GENERATE_HTML is set to YES.
+ 
+-HTML_OUTPUT            = doc
++HTML_OUTPUT            = apiref
+ 
+ # The HTML_FILE_EXTENSION tag can be used to specify the file extension for each
+ # generated HTML page (for example: .htm, .php, .asp).

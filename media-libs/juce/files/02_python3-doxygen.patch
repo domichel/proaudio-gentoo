@@ -1,0 +1,22 @@
+From: =?utf-8?q?IOhannes_m_zm=C3=B6lnig?= <umlaeute@debian.org>
+Date: Sat, 10 Feb 2018 00:00:00 +0100
+Subject: Doc build fixes
+
+ use Python3 rather than Python2
+ make docs reproducible
+Forwarded: no
+---
+ docs/doxygen/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- juce.orig/docs/doxygen/Makefile
++++ juce/docs/doxygen/Makefile
+@@ -8,7 +8,7 @@
+ 	doxygen
+ 
+ build/juce_modules.dox: process_source_files.py $(SOURCE_FILES)
+-	python $< ../../modules build
++	python3 $< ../../modules build
+ 
+ clean:
+ 	rm -rf build doc

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Jack_Oscrolloscope
+Type=Application
+Comment=Simple waveform viewer for JACK
+Exec=jack_oscrolloscope
+TryExec=jack_oscrolloscope
+Icon=jack_oscrolloscope
+Categories=AudioVideo;Audio;Engineering;

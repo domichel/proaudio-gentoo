@@ -1,0 +1,17 @@
+Description: Pass cflags
+Author: Jaromír Mikeš <mira.mikes@seznam.cz>
+Forwarded: no
+
+Index: lv2vocoder/GNUmakefile
+===================================================================
+--- lv2vocoder.orig/GNUmakefile
++++ lv2vocoder/GNUmakefile
+@@ -3,7 +3,7 @@ PLUGIN_NAME = vocoder
+ # These files go into the bundle
+ BUNDLE_FILES = manifest.ttl vocoder.ttl vocoder.so
+ 
+-CFLAGS = -c -Wall -fPIC -DPIC $(strip $(shell pkg-config --cflags lv2core))
++CFLAGS += -c -Wall -fPIC -DPIC $(strip $(shell pkg-config --cflags lv2))
+ 
+ GENDEP_SED_EXPR = "s/^\\(.*\\)\\.o *: /$(subst /,\/,$(@:.d=.o)) $(subst /,\/,$@) : /g"
+ GENDEP_C = set -e; $(GCC_PREFIX)gcc -MM $(CFLAGS) $< | sed $(GENDEP_SED_EXPR) > $@; [ -s $@ ] || rm -f $@

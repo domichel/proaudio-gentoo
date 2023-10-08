@@ -1,0 +1,20 @@
+--- source/Makefile.orig	2023-04-25 23:37:49.020950999 +0200
++++ source/Makefile	2023-04-25 23:39:28.436954875 +0200
+@@ -25,8 +25,6 @@
+ 
+ VERSION = 0.5.1
+ CPPFLAGS += -MMD -MP -DVERSION=\"$(VERSION)\"
+-CXXFLAGS += -O2 -Wall -ffast-math -pthread
+-CXXFLAGS += -march=native
+ 
+ 
+ all:	ebur128 ebumeter
+@@ -42,7 +40,7 @@
+ 
+ EBUMETER_O = ebumeter.o jclient.o mainwin.o styles.o ebu_r128_proc.o \
+ 	ebu_r128_disp.o peak_proc.o png2img.o button.o guiclass.o 
+-ebumeter:	CPPFLAGS += $(shell pkgconf --cflags freetype2)
++ebumeter:	CPPFLAGS += $(shell pkg-config --cflags freetype2)
+ ebumeter:	CPPFLAGS += -DSHARED=\"$(SHARED)\"
+ ebumeter:	LDLIBS += -lclthreads -lclxclient -lzita-resampler \
+ 	-lpthread -ljack -lpng -lXft -lpng -lX11 -lrt

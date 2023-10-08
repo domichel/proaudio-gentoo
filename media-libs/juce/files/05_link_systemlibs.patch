@@ -1,0 +1,85 @@
+From: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Date: Wed, 23 Oct 2019 09:44:36 +0200
+Subject: have Projucer and juceaide link against the system libraries
+
+Origin: Debian
+Forwarded: no
+Last-Update: 2019-08-21
+
+since the Debian package has removed 3rd-party libraries (jpeg, png, flac,
+ogg/vorbis), we must link against the system libraries.
+Last-Update: 2019-08-21
+--- juce.orig/extras/Projucer/Source/ProjectSaving/jucer_ProjectExport_Make.h
++++ juce/extras/Projucer/Source/ProjectSaving/jucer_ProjectExport_Make.h
+@@ -690,6 +690,9 @@
+         StringArray result (linuxLibs);
+ 
+         auto libraries = StringArray::fromTokens (getExternalLibrariesString(), ";", "\"'");
++#ifdef DEBIAN_JUCERPROJECT_LIBS
++        libraries.addArray(StringArray::fromTokens (DEBIAN_JUCERPROJECT_LIBS, ";", "\"'"));
++#endif
+         libraries.removeEmptyStrings();
+ 
+         for (auto& lib : libraries)
+--- juce.orig/extras/Projucer/Source/ProjectSaving/jucer_ProjectExporter.cpp
++++ juce/extras/Projucer/Source/ProjectSaving/jucer_ProjectExporter.cpp
+@@ -577,6 +577,39 @@
+     if (isCurlEnabled (project) && ! isLoadCurlSymbolsLazilyEnabled (project))
+         packages.add ("libcurl");
+ 
++    // on Debian, a number of 3rd-party libs have been stripped away,
++    // so we need to link to the system libraries
++    if (project.getEnabledModules().isModuleEnabled ("juce_core"))
++    {
++        packages.add ("zlib");
++    }
++    if (project.getEnabledModules().isModuleEnabled ("juce_graphics"))
++    {
++        packages.add ("libjpeg");
++        packages.add ("libpng");
++    }
++    if (project.getEnabledModules().isModuleEnabled ("juce_audio_formats"))
++    {
++        if(project.isConfigFlagEnabled ("JUCE_USE_FLAC", true))
++        {
++            packages.add ("flac");
++        }
++        if(project.isConfigFlagEnabled ("JUCE_USE_OGGVORBIS", true))
++        {
++            packages.add ("vorbis");
++            packages.add ("vorbisfile");
++            packages.add ("vorbisenc");
++            packages.add ("ogg");
++        }
++    }
++    if (project.getEnabledModules().isModuleEnabled ("juce_audio_devices"))
++    {
++        if(project.isConfigFlagEnabled ("JUCE_JACK", true))
++        {
++            packages.add ("jack");
++        }
++    }
++
+     if (isWebBrowserComponentEnabled (project) && type == PackageDependencyType::compile)
+     {
+         packages.add ("webkit2gtk-4.0");
+--- juce.orig/extras/Build/juceaide/CMakeLists.txt
++++ juce/extras/Build/juceaide/CMakeLists.txt
+@@ -37,6 +37,7 @@
+         JUCE_USE_CURL=0)
+ 
+     target_link_libraries(juceaide PRIVATE
++        z
+         juce::juce_build_tools
+         juce::juce_recommended_config_flags
+         juce::juce_recommended_lto_flags
+--- juce.orig/extras/Projucer/CMakeLists.txt
++++ juce/extras/Projucer/CMakeLists.txt
+@@ -159,6 +159,7 @@
+     ../Build/CMake/juce_runtime_arch_detection.cpp)
+ 
+ target_link_libraries(Projucer PRIVATE
++    z
+     ProjucerData
+     juce::juce_build_tools
+     juce::juce_cryptography

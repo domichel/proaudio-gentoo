@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# variables and files
+TMPFILE="tmppkglist"
+rm -f "${TMPFILE}"
+PACKAGESLIST="Packages_List"
+echo "proaudio-attic Packages List" > "${PACKAGESLIST}"
+echo "############################" >> "${PACKAGESLIST}"
+
+# do something
+find  -type f -exec echo "$1" {} \;|grep '\.ebuild'|sort > "${TMPFILE}"
+while read myline; do
+	EBUILD=$(echo "${myline}"| sed 's:./:- :')
+	DESCRIPTION=$(cat "${myline}"| grep DESCRIPTION| \
+		sed 's:^\(DESCRIPTION=\)\(.*\):\2:')
+	echo "${EBUILD}: ${DESCRIPTION}" >> "${PACKAGESLIST}"
+done < "${TMPFILE}"
+
+rm "${TMPFILE}"

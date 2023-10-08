@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=X42 Phase/Frequency Wheel
+Type=Application
+Comment=A collection of audio level meters with GUI in LV2 plugin format
+Exec=x42-meter 14
+TryExec=x42-meter 14
+Icon=x42-meter
+Categories=AudioVideo;Audio;X-Vu-Meters;

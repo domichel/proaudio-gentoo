@@ -1,0 +1,11 @@
+--- iannix-9999/iannixapp.cpp.old	2021-12-27 00:42:01.718525471 +0100
++++ iannix-9999/iannixapp.cpp	2021-12-27 00:42:48.113523778 +0100
+@@ -61,7 +61,7 @@
+ #endif
+ #ifdef Q_OS_LINUX
+     appName += "Linux";
+-    qDebug("Command line syntax : ./IanniX <file path>");
++    qDebug("Command line syntax : iannix <file path>");
+ #endif
+ 
+     QCoreApplication::setApplicationName   (appName.trimmed());

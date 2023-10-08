@@ -1,0 +1,22 @@
+--- source/Makefile.orig	2020-02-18 14:12:53.859980633 +0100
++++ source/Makefile	2020-02-18 14:13:58.740978266 +0100
+@@ -35,7 +35,7 @@
+ TETRAPROC_O = tetraproc.o styles.o mainwin.o jclient.o filewin.o convol44.o virtmic.o \
+ 	hpfilt.o pmfilt.o textmat.o confwin.o abconfig.o abprocess.o oscform.o impdata.o \
+ 	kmeter.o kmeterdsp.o png2img.o
+-tetraproc:	CPPFLAGS += $(shell pkgconf --cflags freetype2)
++tetraproc:	CPPFLAGS += $(shell pkg-config --cflags freetype2)
+ tetraproc:	LDLIBS += -lsndfile -lfftw3f -lclxclient -lclthreads -ljack -lpthread \
+ 	-lpng -lXft -lX11 -lrt 
+ tetraproc:	$(TETRAPROC_O)
+--- source/Makefile.orig	2020-02-18 14:12:53.859980633 +0100
++++ source/Makefile	2020-02-18 14:17:21.189970879 +0100
+@@ -24,8 +24,8 @@
+ 
+ VERSION = 0.8.6
+ CPPFLAGS += -MMD -MP -DVERSION=\"$(VERSION)\" -DSHARED=\"$(SHARED)\"
+-CXXFLAGS += -O2 -Wall -ffast-math
+-CXXFLAGS += -march=native
++CXXFLAGS += -Wall -ffast-math
++#CXXFLAGS += -march=native
+ LDFLAGS += -pthread

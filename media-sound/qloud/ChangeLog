@@ -1,0 +1,17 @@
+# ChangeLog for media-sound/qloud
+# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
+
+  04 Oct 2023; Dominique Michel <dominique_libre@sourceforge.net>
+  -qloud-0.22.ebuild;
+  +qloud-9999.ebuild: Update homepage; use QT5 version; fix depends,
+  build and install; add category Engineering.
+
+  09 Mar 2013; Dominique Michel <dominique_libre@sourceforge.net>
+  qloud-0.22.ebuild: Moved QT depends to dev-qt/*; repoman cleanup
+
+  06 Aug 2008; Frieder Buerzele <evermind@tuxfamily.org>; qloud-0.22.ebuild:
+  use modular qt4 deps
+
+  17 Dec 2007; Thomas Kuther <gimpel@sonnenkinder.org> ChangeLog:
+  added a changelog
+

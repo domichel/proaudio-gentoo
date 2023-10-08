@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>proaudio@tuxfamily.org</email>
+		<name>pro-audio overlay team</name>
+	</maintainer>
+	<use>
+		<flag name="demo">Build the demo examples</flag>
+		<flag name="extras">Build the juce utilities</flag>
+		<flag name="jucer">Build the Projucer IDE</flag>
+	</use>
+</pkgmetadata>

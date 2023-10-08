@@ -1,0 +1,15 @@
+--- iannix-9999/iannixapp.cpp.old	2021-12-26 19:30:13.696208092 +0100
++++ iannix-9999/iannixapp.cpp	2021-12-26 19:33:03.883201882 +0100
+@@ -114,9 +114,9 @@
+     Application::pathTools    = pathApplicationDirM.absolutePath() + "/Resources/Tools";
+     Application::pathPatches  = pathApplicationDirM.absolutePath() + "/Resources/Patches";
+ #else
+-    Application::pathExamples = Application::pathApplication.absoluteFilePath() + "/Examples";
+-    Application::pathTools    = Application::pathApplication.absoluteFilePath() + "/Tools";
+-    Application::pathPatches  = Application::pathApplication.absoluteFilePath() + "/Patches";
++    Application::pathExamples = Application::pathApplication.absoluteFilePath() + "/../share/iannix/Examples";
++    Application::pathTools    = Application::pathApplication.absoluteFilePath() + "/../lib/iannix/Tools";
++    Application::pathPatches  = Application::pathApplication.absoluteFilePath() + "/../lib/iannix/Patches";
+ #endif
+ 
+     qDebug("Paths");

@@ -1,0 +1,13 @@
+--- source/Makefile.orig	2023-09-04 12:00:02.619530548 +0200
++++ source/Makefile	2023-09-04 12:00:43.435527504 +0200
+@@ -24,8 +24,8 @@
+ 
+ VERSION = 0.3.3
+ CPPFLAGS += -MMD -MP -DVERSION=\"$(VERSION)\" -DSHARED=\"$(SHARED)\"
+-CXXFLAGS += -O2 -Wall -ffast-math -pthread
+-CXXFLAGS += -march=native
++CXXFLAGS += -Wall -ffast-math -pthread
++CPPFLAGS += $(CXXFLAGS)
+ 
+ 
+ all:	zita-dc1

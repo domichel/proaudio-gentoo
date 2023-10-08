@@ -1,0 +1,20 @@
+--- source/Makefile.old	2022-04-09 00:46:25.290168856 +0200
++++ source/Makefile	2022-04-09 00:48:33.196831276 +0200
+@@ -17,15 +17,14 @@
+ #
+ # ----------------------------------------------------------------------------
+ 
+-
++CXX ?= g++
+ PREFIX ?= /usr/local
+ BINDIR ?= $(PREFIX)/bin
+ SHARED ?= $(PREFIX)/share/zita-avc1
+ 
+ VERSION = 0.1.0
+ CPPFLAGS += -MMD -MP -DVERSION=\"$(VERSION)\" -DSHARED=\"$(SHARED)\"
+-CXXFLAGS += -O2 -Wall -ffast-math -pthread
+-CXXFLAGS += -march=native
++CXXFLAGS += -Wall -ffast-math -pthread
+ 
+ 
+ all:	zita-avc1

@@ -1,0 +1,22 @@
+--- source/Makefile.old	2021-12-31 06:59:59.685400026 +0100
++++ source/Makefile	2021-12-31 07:02:23.342394784 +0100
+@@ -17,15 +17,15 @@
+ #
+ # ----------------------------------------------------------------------------
+ 
+-
++CXX ?= g++
+ PREFIX ?= /usr/local
+ BINDIR ?= $(PREFIX)/bin
+ 
+ VERSION = 0.2.2
+ CPPFLAGS += -MMD -MP -DVERSION=\"$(VERSION)\"
+-CPPFLAGS += $(shell pkgconf --cflags freetype2)
+-CXXFLAGS += -O2 -Wall
+-CXXFLAGS += -march=native
++CPPFLAGS += $(shell pkg-config --cflags freetype2)
++#CXXFLAGS += -O2 -Wall
++#CXXFLAGS += -march=native
+ LDLIBS += -lclthreads -lclxclient -lpthread -ljack -lXft -lX11 -lrt
+ 
+ 

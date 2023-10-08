@@ -1,0 +1,102 @@
+diff -u -r RSound-1.1.old/patches/alsa/Makefile RSound-1.1/patches/alsa/Makefile
+--- RSound-1.1.old/patches/alsa/Makefile	2023-10-05 20:07:08.434184396 +0200
++++ RSound-1.1/patches/alsa/Makefile	2023-10-05 20:09:15.353174932 +0200
+@@ -10,14 +10,14 @@
+ all: $(TARGET)
+ 
+ %.o: %.c
+-	$(CC) -o $@ -c $< $(INCDIRS) $(CFLAGS) -std=gnu99 -Wall -O2 -g -pthread -fPIC -DPIC
++	$(CC) -o $@ -c $< $(INCDIRS) $(CFLAGS) -std=gnu99 -Wall -pthread -fPIC -DPIC
+ 
+ $(TARGET): $(OBJ)
+ 	$(CC) -shared -o $@ $< -Wl,-no-undefined -pthread $(LIBS) -fPIC
+ 
+ install: $(TARGET)
+-	mkdir -p $(DESTDIR)$(PREFIX)/lib/alsa-lib
+-	install -m755 $(TARGET) $(DESTDIR)$(PREFIX)/lib/alsa-lib
++	mkdir -p $(DESTDIR)$(PREFIX)/lib64/alsa-lib
++	install -m755 $(TARGET) $(DESTDIR)$(PREFIX)/lib64/alsa-lib
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)$(PREFIX)/alsa-lib/$(TARGET)
+diff -u -r RSound-1.1.old/patches/vlc/Makefile RSound-1.1/patches/vlc/Makefile
+--- RSound-1.1.old/patches/vlc/Makefile	2023-10-05 20:07:08.434184396 +0200
++++ RSound-1.1/patches/vlc/Makefile	2023-10-05 20:09:50.065172343 +0200
+@@ -20,15 +20,15 @@
+ 	$(CC) -o $@ -shared -fPIC $< -lrsound $(VLC_LIBS)
+ 
+ %.o: %.c
+-	$(CC) -c -o $@ $< $(CFLAGS) -fPIC -O2 -g -std=gnu99 $(VLC_CFLAGS) $(VLC_DEFINES)
++	$(CC) -c -o $@ $< $(CFLAGS) -fPIC -std=gnu99 $(VLC_CFLAGS) $(VLC_DEFINES)
+ 
+ clean:
+ 	rm -f *.so
+ 	rm -f *.o
+ 
+ install:
+-	mkdir -p $(DESTDIR)$(PREFIX)/lib/vlc/plugins/audio_output
+-	install -m755 $(TARGET_LIB) $(DESTDIR)$(PREFIX)/lib/vlc/plugins/audio_output
++	mkdir -p $(DESTDIR)$(PREFIX)/lib64/vlc/plugins/audio_output
++	install -m755 $(TARGET_LIB) $(DESTDIR)$(PREFIX)/lib64/vlc/plugins/audio_output
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)$(PREFIX)/lib/vlc/plugins/audio_output/$(TARGET_LIB)
+diff -u -r RSound-1.1.old/src/Makefile RSound-1.1/src/Makefile
+--- RSound-1.1.old/src/Makefile	2023-10-05 20:07:08.434184396 +0200
++++ RSound-1.1/src/Makefile	2023-10-05 20:08:27.754178481 +0200
+@@ -17,7 +17,7 @@
+ TARGET_LIB_OBJ = librsound/librsound.o librsound/buffer.o
+ TARGET_LIB_OBJ_STATIC = librsound/librsound.a
+ 
+-PKGCONF_PATH = $(PREFIX)/lib/pkgconfig/rsound.pc
++PKGCONF_PATH = $(PREFIX)/lib64/pkgconfig/rsound.pc
+ 
+ TARGET_SERVER_LIBS = -lpthread
+ TARGET_LIB_LIBS = -lpthread
+@@ -164,14 +164,14 @@
+ 
+ 
+ install-lib: $(TARGET_LIB) $(TARGET_LIB_OBJ_STATIC) install-pkgconf
+-	mkdir -p $(DESTDIR)$(PREFIX)/{lib/pkgconfig,include,share/man/man1}
+-	install -m755 $(TARGET_LIB) $(DESTDIR)$(PREFIX)/lib
++	mkdir -p $(DESTDIR)$(PREFIX)/{lib64/pkgconfig,include,share/man/man1}
++	install -m755 $(TARGET_LIB) $(DESTDIR)$(PREFIX)/lib64
+ ifneq ($(PLATFORM),OSX)
+-	cp -P librsound/librsound.so librsound/librsound.so.3 $(DESTDIR)$(PREFIX)/lib
++	cp -P librsound/librsound.so librsound/librsound.so.3 $(DESTDIR)$(PREFIX)/lib64
+ endif
+-	install -m644 $(TARGET_LIB_OBJ_STATIC) $(DESTDIR)$(PREFIX)/lib
++	install -m644 $(TARGET_LIB_OBJ_STATIC) $(DESTDIR)$(PREFIX)/lib64
+ 	install -m644 librsound/rsound.h $(DESTDIR)$(PREFIX)/include
+-	install -m644 rsound.pc $(DESTDIR)$(PREFIX)/lib/pkgconfig
++	install -m644 rsound.pc $(DESTDIR)$(PREFIX)/lib64/pkgconfig
+ 	install -m644 ../doc/rsd.1 $(DESTDIR)$(PREFIX)/share/man/man1
+ 	install -m644 ../doc/rsdplay.1 $(DESTDIR)$(PREFIX)/share/man/man1
+ 
+@@ -199,9 +199,9 @@
+ uninstall:
+ 	rm -rf $(PREFIX)/bin/rsd
+ 	rm -rf $(PREFIX)/bin/rsdplay
+-	rm -rf $(PREFIX)/lib/librsound.*
++	rm -rf $(PREFIX)/lib64/librsound.*
+ 	rm -rf $(PREFIX)/include/rsound.h
+-	rm -rf $(PREFIX)/lib/pkgconfig/rsound.pc
++	rm -rf $(PREFIX)/lib64/pkgconfig/rsound.pc
+ 	rm -rf $(PREFIX)/share/man/man1/rsd.1
+ 	rm -rf $(PREFIX)/share/man/man1/rsdplay.1
+ 
+diff -u -r RSound-1.1.old/src/oss-emul/Makefile RSound-1.1/src/oss-emul/Makefile
+--- RSound-1.1.old/src/oss-emul/Makefile	2023-10-05 20:07:08.435184396 +0200
++++ RSound-1.1/src/oss-emul/Makefile	2023-10-05 20:08:27.754178481 +0200
+@@ -3,8 +3,8 @@
+ SCRIPT = ross
+ 
+ all: librsoundoss.c
+-	$(CC) $(CFLAGS) -g -O2 -Wall -lrsound -fPIC -shared -o $(TARGET) $(SOURCE)
++	$(CC) $(CFLAGS) -Wall -lrsound -fPIC -shared -o $(TARGET) $(SOURCE)
+ 
+ install: all
+-	install -m755 $(TARGET) /usr/lib
+-	install -m755 $(SCRIPT) /usr/bin 
++	install -m755 $(TARGET) /usr/lib64
++	install -m755 $(SCRIPT) /usr/bin

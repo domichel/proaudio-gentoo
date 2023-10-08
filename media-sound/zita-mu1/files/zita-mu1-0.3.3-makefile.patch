@@ -1,0 +1,20 @@
+--- source/Makefile.orig	2023-04-26 01:36:55.793229586 +0200
++++ source/Makefile	2023-04-26 01:37:16.752230403 +0200
+@@ -24,8 +24,6 @@
+ 
+ VERSION = 0.3.3
+ CPPFLAGS += -MMD -MP -DVERSION=\"$(VERSION)\" -DSHARED=\"$(SHARED)\"
+-CXXFLAGS += -O2 -Wall -ffast-math -pthread
+-CXXFLAGS += -march=native
+ 
+ 
+ all:	zita-mu1
+@@ -34,7 +32,7 @@
+ ZITA-MU1_O = zita-mu1.o styles.o mainwin.o jclient.o png2img.o button.o rotary.o guiclass.o \
+ 	kmeter.o cmeter.o kmeterdsp.o cmeterdsp.o 
+ 
+-zita-mu1:	CPPFLAGS += $(shell pkgconf --cflags freetype2)
++zita-mu1:	CPPFLAGS += $(shell pkg-config --cflags freetype2)
+ zita-mu1:	LDLIBS += -lclxclient -lclthreads -ljack -lpthread -lcairo -lpng -lXft -lX11 -lrt
+ zita-mu1:	$(ZITA-MU1_O)
+ 	$(CXX) $(LDFLAGS) -o $@ $(ZITA-MU1_O) $(LDLIBS)

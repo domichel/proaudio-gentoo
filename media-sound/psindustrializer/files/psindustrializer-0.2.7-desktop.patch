@@ -1,0 +1,14 @@
+--- psindustrializer-0.2.7/psindustrializer.desktop.old	2021-12-31 19:05:15.981812198 +0100
++++ psindustrializer-0.2.7/psindustrializer.desktop	2021-12-31 19:06:05.841810379 +0100
+@@ -4,10 +4,9 @@
+ Name[ru]=Power Station Industrializer
+ 
+ Comment=Hit Scanning Sound Synthesizer
+-Comment[ru]=Сканирующий ударный синтезатор звуков
+ 
+ Exec=psindustrializer
+ Icon=psindustrializer
+ Terminal=false
+ Type=Application
+-Categories=Gtk;Audio;Synthesizer;Music;AudioVideo;
++Categories=AudioVideo;Audio;Music;

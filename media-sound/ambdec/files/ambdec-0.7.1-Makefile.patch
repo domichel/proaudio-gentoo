@@ -1,0 +1,29 @@
+--- ambdec-0.7.1/source/Makefile.orig	2019-08-26 23:21:59.097647997 +0200
++++ ambdec-0.7.1/source/Makefile	2019-08-26 23:23:39.074644349 +0200
+@@ -18,15 +18,14 @@
+ #
+ # ----------------------------------------------------------------------------
+ 
+-
++CXX ?= g++
+ PREFIX ?= /usr/local
+ BINDIR ?= $(PREFIX)/bin
+ SHARED ?= $(PREFIX)/share/ambdec
+ 
+ VERSION = 0.7.1
+ CPPFLAGS += -MMD -MP -DVERSION=\"$(VERSION)\" -DSHARED=\"$(SHARED)\"
+-CXXFLAGS += -O2 -ffast-math -Wall
+-CXXFLAGS += -march=native
++CXXFLAGS += -ffast-math -Wall
+ 
+ 
+ all:	ambdec ambdec_cli
+@@ -35,7 +34,7 @@
+ AMBDEC_O = ambdec.o styles.o mainwin.o confwin.o radbut.o filewin.o \
+            jclient.o nffilt.o xover2.o decoder.o adconf.o sstring.o \
+            png2img.o meter.o
+-ambdec:	CPPFLAGS += $(shell pkgconf --cflags freetype2)
++ambdec:	CPPFLAGS += $(shell pkg-config --cflags freetype2)
+ ambdec:	LDLIBS += -lclxclient -lclthreads -ljack -lpng -lpthread -lXft -lX11 -lrt
+ ambdec:	$(AMBDEC_O)
+ 	$(CXX) $(LDFLAGS) -o $@ $(AMBDEC_O) $(LDLIBS)

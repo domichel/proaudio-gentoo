@@ -1,0 +1,42 @@
+Description: adjust paths in installed CMake snippets
+Author: IOhannes m zmölnig
+Origin: Debian
+Forwarded: not-needed
+Last-Update: 2021-12-14
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- juce.orig/extras/Build/CMake/JUCEConfig.cmake.in
++++ juce/extras/Build/CMake/JUCEConfig.cmake.in
+@@ -22,6 +22,8 @@
+ 
+ include("${CMAKE_CURRENT_LIST_DIR}/LV2_HELPER.cmake")
+ 
++set(PACKAGE_PREFIX_DIR "@CMAKE_INSTALL_PREFIX@")
++
+ if(NOT TARGET juce::juceaide)
+     add_executable(juce::juceaide IMPORTED)
+     set_target_properties(juce::juceaide PROPERTIES
+@@ -30,11 +32,11 @@
+ 
+ check_required_components("@PROJECT_NAME@")
+ 
+-set(JUCE_MODULES_DIR "@PACKAGE_JUCE_MODULE_PATH@" CACHE INTERNAL
++set(JUCE_MODULES_DIR "/usr/share/juce/modules" CACHE INTERNAL
+     "The path to JUCE modules")
+ 
+-include("@PACKAGE_UTILS_INSTALL_DIR@/JUCEModuleSupport.cmake")
+-include("@PACKAGE_UTILS_INSTALL_DIR@/JUCEUtils.cmake")
++include("@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_LIBDIR@/JUCEModuleSupport.cmake")
++include("@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_LIBDIR@/JUCEUtils.cmake")
+ 
+ set(_juce_modules
+     juce_analytics
+@@ -86,7 +88,7 @@
+ unset(_targets_expected)
+ 
+ foreach(_juce_module IN LISTS _juce_modules)
+-    juce_add_module("@PACKAGE_JUCE_MODULE_PATH@/${_juce_module}" ALIAS_NAMESPACE juce)
++    juce_add_module("/usr/share/juce/modules/${_juce_module}" ALIAS_NAMESPACE juce)
+ endforeach()
+ 
+ unset(_juce_modules)

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>proaudio@tuxfamily.org</email>
+		<name>pro-audio overlay team</name>
+	</maintainer>
+	<use>
+		<flag name="lv2">Build lv2 plugins</flag>
+		<flag name="vst">Support LinuxVST plugins</flag>
+	</use>
+</pkgmetadata>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>proaudio@tuxfamily.org</email>
+		<name>pro-audio overlay team</name>
+	</maintainer>
+	<use>
+		<flag name="experimental">Build binaries for experimental 64 bits double-precision floatsize</flag>
+		<flag name="extra">Include extra objects (sigmund~, pd~,...) in libpd</flag>
+		<flag name="instance">Enable multi-instane support for libpd</flag>
+		<flag name="libpd">Additionally build libpd</flag>
+		<flag name="utils">Enable utilities if building libpd</flag>
+		<flag name="watchdog">Additionally build watchdog</flag>
+	</use>
+</pkgmetadata>

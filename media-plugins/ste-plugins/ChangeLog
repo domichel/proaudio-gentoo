@@ -1,0 +1,11 @@
+# ChangeLog for media-plugins/ste-plugins
+# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
+
+  24 Sep 2023; Dominique Michel <dominique_libre@users.sourceforge.net>
+  ste-plugins-0.0.2.ebuild: EAPI 8 bump.
+
+*ste-plugins-0.0.2 (2 Apr 2014)
+
+  2 Apr 2014; Dominique Michel <dominique_libre@users.sourceforge.net>
+  +ste-plugins-0.0.2.ebuild: initial ebuild from Nikita Zlobin.
+  +ChangeLog, +metadata.xml
