@@ -1,12 +1,12 @@
 # proaudio-gentoo
 
 This is the mew generation proaudio overlay. It is based
-on the old proaudio overlay on tuxfamily.org.
+on the old proaudio overlay on tuxfamily.org:
 
-\< Work In progress >
+`svn://svn.tuxfamily.org/svnroot/proaudio/proaudio/trunk/overlays/proaudio`
 
-Currently, I am cleaning up the mess in the old overlay.
-When done, I will import the result here.
+You can find that new repository at
+    https://github.com/domichel/proaudio-gentoo
 
 Pro Audio on Gentoo
 ===================
@@ -59,7 +59,7 @@ priority = 950
 [proaudio]
 location = /var/db/repos/proaudio
 sync-type = svn
-sync-uri = svn://svn.tuxfamily.org/svnroot/proaudio/proaudio/trunk/overlays/proaudio
+sync-uri = https://github.com/domichel/proaudio-gentoo.git
 priority = 900
 ```
 and to add 2 lines in `/etc/portage/packages.accept_keywords`:
@@ -67,7 +67,7 @@ and to add 2 lines in `/etc/portage/packages.accept_keywords`:
 media-sound/ladish **
 media-sound/lash **
 ```
-Amoung other goodies, proaudio contain many ebuilds related
+Amoung other goodies, proaudio-gentoo contain many ebuilds related
 to sound engineering.
 
 As exemple the jkmeter and the new ebumeter which are the best
