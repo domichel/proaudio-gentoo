@@ -56,9 +56,9 @@ sync-type = git
 sync-uri = https://github.com/domichel/GenCool.git
 priority = 950
 
-[proaudio]
-location = /var/db/repos/proaudio
-sync-type = svn
+[proaudio-gentoo]
+location = /var/db/repos/proaudio-gentoo
+sync-type = git
 sync-uri = https://github.com/domichel/proaudio-gentoo.git
 priority = 900
 ```
