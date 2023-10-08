@@ -58,7 +58,7 @@ priority = 950
 
 [proaudio-gentoo]
 location = /var/db/repos/proaudio-gentoo
-sync-type = svn
+sync-type = git
 sync-uri = https://github.com/domichel/proaudio-gentoo.git
 priority = 900
 ```
