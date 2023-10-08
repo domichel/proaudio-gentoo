@@ -62,11 +62,7 @@ sync-type = git
 sync-uri = https://github.com/domichel/proaudio-gentoo.git
 priority = 900
 ```
-and to add 2 lines in `/etc/portage/packages.accept_keywords`:
-```
-media-sound/ladish **
-media-sound/lash **
-```
+
 Amoung other goodies, proaudio-gentoo contain many ebuilds related
 to sound engineering.
 
