@@ -62,6 +62,14 @@ sync-type = git
 sync-uri = https://github.com/domichel/proaudio-gentoo.git
 priority = 900
 ```
+Another solution is to give the overlays the priorities you want
+based on any criteria You may choose, and to block ladish when it
+a blocking conflict exist with lash.
+Use `emerge -v ...` to see which overlay provoque the conflict and,
+as example, in `/etc/portage/package.mask`:
+```
+media-sound/ladish::ladi51
+```
 
 Amoung other goodies, proaudio-gentoo contain many ebuilds related
 to sound engineering.
