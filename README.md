@@ -74,7 +74,7 @@ media-sound/ladish::ladi51
 Amoung other goodies, proaudio-gentoo contain many ebuilds related
 to sound engineering.
 
-As exemple the jkmeter and the new ebumeter which are the best
+As example the jkmeter and the new ebumeter which are the best
 tools of today to do the mastering. They was build from the
 ideas of Bob Katz, the best mastering expert in exercise.
 Visit his blog or read his book "Mastering Audio - the art
