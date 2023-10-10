@@ -94,6 +94,6 @@ Enjoy!
 
 P.S.: It is a personnal overlay, GenCool, where I maintain a
 special version of the guitarix ebuild that install dk-builder,
-a tool that will be best used with some knowledge into electronics
-and can be used for the development of guitarix and LV2 plugins.
+a tool that will be best used with some knowledge into electronics,
+and its main purpose is the development of guitarix and LV2 plugins.
 See https://github.com/domichel/GenCool.git
