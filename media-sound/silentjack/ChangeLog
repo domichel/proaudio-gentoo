@@ -1,8 +1,0 @@
-# ChangeLog for media-sound/silentjack
-# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
-
-  05 Oct 2023: Dominique Michel <dominique_libre@sourceforge.net>
-  silentjack-0.3.ebuild: EAPI 8; restrict mirror.
-
-  14 Feb 2013: Dominique Michel <dominique_libre@sourceforge.net>
-  +silentjack-0.3.ebuild: initial ebuild

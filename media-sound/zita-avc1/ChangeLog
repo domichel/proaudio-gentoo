@@ -1,8 +1,0 @@
-# ChangeLog for media-sound/zita-avc1
-# Copyright 1999-2022 Gentoo Foundation; Distributed under the GPL v2
-
-*zita-avc1-0.1.0 (09 Apr 2022)
-
-  09 Apr 2022; Dominique Michel <dominique_libre@sourceforge.net>
-  zita-acv1-0.1.0.ebuild: Initial commit
-  files/zita-avc1-0.1.0-makefile.patch: fix g++ and *FLAGS

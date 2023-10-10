@@ -1,9 +1,0 @@
-# ChangeLog for media-sound/zita-dpl1
-# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
-
-*zita-dpl1-0.3.3 (03 Sep 2023)
-
-  03 Sep 2023; Dominique Michel <dominique_libre@sourceforge.net>
-  +zita-dpl1-0.3.3.ebuild
-  +files/zita-dpl1-0.3.3_Makefile.patch
-  initial import

@@ -1,9 +1,0 @@
-# ChangeLog for media-sound/glashctl
-# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
-
-  28 Sep 2023; Dominique Michel <dominique_libre@soourceforge.net>
-  +tuxguitar-1.6.0.ebuild: initial ebuild; use a soundfont in the
-  main tree, let the user chosse the audio driver of the fluidsnth
-  plugin.
-  +files/tuxguitar: launcher script fur /usr/bin
-  +files/replace-soundfont/patch: use a soundfont in the main tree

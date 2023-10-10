@@ -1,7 +1,0 @@
-# ChangeLog for media-sound/sysexxer-ng
-# Copyright 1999-2023 Gentoo Foundation; Distributed under the GPL v2
-
-*sysexxer-9999 (05 Oct 2023)
-
-  05 Oct 2023; Dominique Michel <dominique_libre@users.sourceforge.net>
-  +sysexxer-9999.ebuild: Initial import.
