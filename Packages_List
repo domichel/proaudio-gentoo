@@ -2,6 +2,7 @@ proaudio-attic Packages List
 ############################
 - dev-lang/faust/faust-0.9.90.ebuild: "Faust AUdio STreams is a programming language/compiler for fast DSP algorythms."
 - media-libs/asio-sdk/asio-sdk-2.2.ebuild: "Steinberg ASIO SDK 2.2 - win32"
+- media-libs/calf_big_styles/calf_big_styles-1.0.1.ebuild: "Big Styles for the Calf Audio Plugins"
 - media-libs/juce/juce-7.0.6.ebuild: "JUCE is class library for developing cross-platform applications."
 - media-libs/vst-sdk/vst-sdk-2.3-r3.ebuild: "Steinberg VST Plug-Ins SDK 2.3 - win32"
 - media-libs/vst-sdk/vst-sdk-2.3-r4.ebuild: "Steinberg VST Plug-Ins SDK 2.3 - win32"
@@ -53,7 +54,7 @@ proaudio-attic Packages List
 - media-sound/jnoise/jnoise-0.6.0.ebuild: "A command line JACK app generating white and pink gaussian noise"
 - media-sound/jnoisemeter/jnoisemeter-0.2.2.ebuild: "Jnoisemeter is a small app designed to measure audio test signals and in particular noise signals"
 - media-sound/ladish/ladish-9999.ebuild: "LADI Session Handler - a session management system for JACK applications"
-- media-sound/lash/lash-9999.ebuild: "LASH Audio Session Handler"
+- media-sound/lash/lash-9998.ebuild: "LASH Audio Session Handler"
 - media-sound/ltc-tools/ltc-tools-0.7.0.ebuild: "Linear/Logitudinal Time Code (LTC) Library tools"
 - media-sound/ltc-tools/ltc-tools-9999.ebuild: "Linear/Logitudinal Time Code (LTC) Library tools"
 - media-sound/lv2proc/lv2proc-0.5.1.ebuild: "A simple command line effect processor using LV2 plugins"
