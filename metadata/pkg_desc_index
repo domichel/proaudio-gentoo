@@ -1,0 +1,84 @@
+dev-lang/faust 0.9.90: Faust AUdio STreams is a programming language/compiler for fast DSP algorythms.
+media-libs/calf_big_styles 1.0.1: Big Styles for the Calf Audio Plugins
+media-libs/juce 7.0.6: JUCE is class library for developing cross-platform applications.
+media-libs/vst-sdk 2.3-r3 2.3-r4 2.4: Steinberg VST Plug-Ins SDK 2.4 - win32
+media-plugins/amb1-plugins 0.3.0: AMB-plugins ladspa plugin package. Filters by Fons Adriaensen
+media-plugins/balance-lv2 9999: Stereo balance control with optional per channel delay
+media-plugins/convoLV2 9999: convoLV2 is a lv2 plugin to convolve audio signals
+media-plugins/invada-studio-plugins 0.3.1: Invada ladspa: Compressor, Filters, Reverb, Input Processor, Tube Simulator
+media-plugins/lsp-plugins 9999: Linux Studio Plugins Project
+media-plugins/lv2vocoder 1: An lv2 vocoder plugin
+media-plugins/meters-lv2 9999: A colletion of audio level meters with GUI in LV2 plugin format
+media-plugins/midifilter-lv2 9999: LV2 plugins to filter MIDI events
+media-plugins/mixtri-lv2 9999: MixTrix is a matrix mixer & trigger processor intended to be used with sisco-lv2
+media-plugins/njl-plugins 0.2.1-r2: NJL LADSPA audio plugins/effects
+media-plugins/nodelay-lv2 9999: LV2 audio delay line with latency reporting
+media-plugins/sisco-lv2 9999: Simple LV2 audio oscilloscope
+media-plugins/ste-plugins 0.0.2: STE LADSPA plugins package. Includes stereo panner and width adjuster.
+media-plugins/triceratops-lv2 9999: Triceratops is a polyphonic subtractive synthesizer plugin for use with the LV2 architecture
+media-plugins/tuna-lv2 9999: A musical instrument tuner with strobe characteristic in LV2 plugin formt
+media-plugins/vocoder-ladspa 0.4: A vocoder is a sound effect that can make a human voice sound synthetic
+media-plugins/wah-plugins 0.1.0: Auto-WAH plugin.
+media-plugins/whysynth 20170701: A versatile DSSI Softsynth Plugin
+media-plugins/xfade-lv2 9999: Stereo DJ X-fade
+media-sound/4deckradio 9999: Multi-deck media playback for radio stations
+media-sound/aliki 0.3.0-r1: An integrated system for Impulse Response measurements
+media-sound/alsaplayer 9999: Media player primarily utilising ALSA
+media-sound/ambdec 0.7.1-r1: An Ambisonic decoder for first and second order
+media-sound/amidimap 0.1.1-r1: Read in, process and output MIDI events.
+media-sound/aseqjoy 0.0.2: Joystick to ALSA MIDI sequencer converter.
+media-sound/drc 3.2.3: Generate digital room correction FIR filters for use in realtime convolution engines like BruteFIR
+media-sound/ebumeter 0.5.1: Loudness measurement according to EBU-R128
+media-sound/foo-yc20 1.3.0: YC-20 divide-down combo organ emulator with lv2 plugin
+media-sound/ghostess 20210101: graphical DSSI host, based on jack-dssi-host
+media-sound/gwc 0.22.06: Gnome Wave Cleaner
+media-sound/iannix 9999: A Graphical Open-Source Sequencer For Digital Art
+media-sound/jack_delay 0.4.2: measures the latency between two jack ports with subsample accuracy
+media-sound/jack_oscrolloscope 0.7: Simple waveform viewer for JACK
+media-sound/jack_snapshot 0.0.4: Tool for storing/restoring jack connections states.
+media-sound/jackmeter 0.4: A basic console based DPM (Digital Peak Meter) for JACK
+media-sound/jackminimix 0.2 9999: a simple mixer for the Jack Audio Connection Kit with an OSC based control interface
+media-sound/jackmixdesk 9999: Audio mixer for JACK with OSC control, LASH support and GTK GUI
+media-sound/jamin-presets 6.0: A collection of presets for Jamin made by Gilberto Andre Borges
+media-sound/japa 0.9.4: JAPA is a perceptual analyzer for JACK and ALSA
+media-sound/jconvolver 1.1.0: Command line convolution reverb by Fons Adriaensen
+media-sound/jkmeter 0.9.0: Jkmeter is a combined RMS/digital peak meter based on the ideas of mastering guru Bob Katz
+media-sound/jmess 9999: JMess can save/load an XML file with all the current jack connections
+media-sound/jmeters 0.4.5: A jack multichannel audio level meter app featuring correct ballistics for both the VU and the PPM
+media-sound/jnoise 0.6.0: A command line JACK app generating white and pink gaussian noise
+media-sound/jnoisemeter 0.2.2: Jnoisemeter is a small app designed to measure audio test signals and in particular noise signals
+media-sound/ladish 9999: LADI Session Handler - a session management system for JACK applications
+media-sound/lash 9998: LASH Audio Session Handler
+media-sound/ltc-tools 0.7.0 9999: Linear/Logitudinal Time Code (LTC) Library tools
+media-sound/lv2proc 0.5.1: A simple command line effect processor using LV2 plugins
+media-sound/madjack 9999: MadJACK is a MPEG Audio Deck for the Jack Audio Connection Kit with an OSC based control interface
+media-sound/museseq 4.2.1 9999: The Linux (midi) MUSic Editor (a sequencer)
+media-sound/psindustrializer 0.2.7: Industrializer is a program for generating percussion sounds for musical purposes
+media-sound/pure-data 0.54_p0 9999: real-time music and multimedia environment
+media-sound/qloud 9999: Tool to measure loudspeaker frequency and step responses and distortions
+media-sound/rakarrack-plus 1.2.4 9999: A multi-effects board that is a merging of original rakarrak and its LV2 portage rkrlv2 with various enhancements
+media-sound/rsound 1.1 9999: Networked audio system to transfer audio data to a different computer.
+media-sound/silentjack 0.3: SilentJack is a silence/dead air detector for the Jack Audio Connection Kit
+media-sound/sysexxer-ng 9999: Universal tool to exchange MIDI system-exclusive data
+media-sound/tetraproc 0.8.6: A-format to B-format signal converter for tetrahedral Ambisonic microphones
+media-sound/tuxguitar 1.6.0: TuxGuitar is a multitrack guitar tablature editor and player written in Java-SWT
+media-sound/waon 0.10: A wave to notes transcriber, able to transcribe wav to midi
+media-sound/waonc 9999: A wave to notes transcriber, able to transcribe wav to midi
+media-sound/yass 0.1.0: Yet Another Scrolling Scope features jack input, variable scrolling speed and automatic gain control
+media-sound/yatm 0.9: Yet Another Time Machine: simple command line audio player which can perform time-stretched playback
+media-sound/zita-ajbridge 0.8.4: Bridge ALSA devices to Jack clients, to provide additional capture (a2j) or playback (j2a) channels
+media-sound/zita-at1 0.6.2-r1: An autotuner, normally used to correct the pitch of a voice singing (slightly) out of tune
+media-sound/zita-avc1 0.1.0: Analog style vocoder inspiredby the EMS vocoders
+media-sound/zita-bls1 0.3.3: A digital Blumlein Shuffler, binaural signals to stereo speaker pair
+media-sound/zita-dc1 0.3.3: Dynamics compressor
+media-sound/zita-dpl1 0.3.3: Look-ahead digital peak level limiter
+media-sound/zita-mu1 0.3.3: Zita-mu1 is JACK app used to organise stereo monitoring
+media-sound/zita-njbridge 0.4.8: Jack client to transmit full quality mutlichannel audio over IP local network
+media-sound/zita-rev1 0.2.2-r2: Zita-rev1 is a reworked version of the reverb originally developed for Aeolus
+media-video/cinelerra 9999: The most advanced non-linear video editor and compositor
+sys-apps/das_watchdog 0.9.0: watchdog to ensure a realtime process won't hang the machine
+sys-apps/pmount-gui 1.20121118 9999: A simple graphical frontend for pmount
+sys-apps/rt-tests 9999: Programs to test various rt-linux features.
+sys-process/set_rlimits 1.3.0: Give unpriviledged users access to realtime scheduling
+x11-misc/fvwm-xdg-menu 9999: xdg menu for use with fvwm and fvwm-menu-desktop
+x11-themes/fvwm-crystal 9999: Configurable FVWM theme with transparency and freedesktop compatible menu
