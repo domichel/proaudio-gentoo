@@ -1,7 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2023 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-# This setting will remove anything that hard depend on *kit including pulseaudio,
-# gnome and a few other desktops.
-USE="alsa -arts audiofile cddb cdparanoia -consolekit dssi ffmpeg fftw fluidsynth jack jackmidi ladspa lame lash libsamplerate lv2 midi mikmod mms mmx modplug musepack osc -policykit raw sndfile sse taglib theora threads timidity -udisks -udisks2 unicode -upower twolame vcd wavpack xft"
+# This setting add most usefull flags for audio work and proaudio.
+# We don't want pulse audio to mess with a proaudio setup, but as it can
+# be disabled when installed, we put that flag here in order to let
+# the user possibility to change it easily.
+USE="audiofile cddb cdparanoia dssi ffmpeg fftw fluidsynth jack jackmidi ladspa lame lash libsamplerate lv2 midi mikmod mms modplug musepack -pulseaudio osc raw sndfile taglib theora timidity twolame vcd wav wavpack"

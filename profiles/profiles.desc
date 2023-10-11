@@ -7,7 +7,7 @@
 #arch		profile_directory				status
 
 # AMD64 Profiles
-amd64           default/linux/amd64/17.0/desktop/proaudio          stable
+amd64           default/linux/amd64/17.1/desktop/proaudio          stable
 
 # x86 Profiles
 x86             default/linux/x86/17.0/desktop/proaudio            stable
