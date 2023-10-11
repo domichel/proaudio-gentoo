@@ -2,7 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="project">
-		<email>proaudio@tuxfamily.org</email>
+		<email>dominique_libre@users.sourceforge.net</email>
 		<name>pro-audio overlay team</name>
 	</maintainer>
 	<longdescription>Faust AUdio STreams is a functional programming language for realtime audio plugins and applications development. The Faust compiler translates signal processing specifications into C++ code.
