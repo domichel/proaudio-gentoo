@@ -11,13 +11,13 @@ You can find that new repository at
 Pro Audio on Gentoo
 ===================
 We have several repositories we can use. The first one is
-the main tree.
+the main tree (::gentoo).
 
 The second one is audio-overlay at
     https://github.com/gentoo-audio/audio-overlay
 
 The third one is the overlay of decibel Linux at
-    https://github,com/Gentoo-Music-and-Audio-Technology/gentoostudio
+    https://github.com/Gentoo-Music-and-Audio-Technology/gentoostudio
 
 Another one is os-gentoo-overlay which provide LADI
 related stuffs for use on gentoo:
@@ -33,6 +33,14 @@ do have blockings in the form of variations of
     `lash? ( !media-sound/lash )`
 That imply they will block all the lash related software from
 the main tree.
+
+Installation of the overlays
+============================
+audio-overlay and proaudio-gentoo can be installed via eselect:
+```
+# eselect repository list
+# eselect repository enable proaudio-gentoo
+```
 
 Proaudio-gentoo provide a fake media-sound/lash ebuild that
 install nothing but only depend on media-sound/ladish, That
@@ -65,7 +73,7 @@ priority = 900
 Another solution is to give the overlays the priorities you want
 based on any criteria You may choose, and to block ladish when
 a blocking conflict exist with lash.
-Use `emerge -v ...` to see which overlay provokes the conflict and,
+Use `emerge -av ...` to see which overlay provokes the conflict and,
 as example, in `/etc/portage/package.mask`:
 ```
 media-sound/ladish::ladi51
@@ -94,6 +102,6 @@ Enjoy!
 
 P.S.: It is a personnal overlay, GenCool, where I maintain a
 special version of the guitarix ebuild that install dk-builder,
-a tool that will be best used with some knowledge into electronics,
-and its main purpose is the development of guitarix and LV2 plugins.
+a tool that will be best used with some knowledge into electronics.
+Its main purpose is the development of guitarix and LV2 plugins.
 See https://github.com/domichel/GenCool.git
