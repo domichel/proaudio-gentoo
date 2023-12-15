@@ -1,3 +1,4 @@
 #!/bin/sh
+
 cd /usr/share/tuxguitar
-./tuxguitar.sh
+/bin/sh tuxguitar.sh
