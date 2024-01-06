@@ -17,6 +17,7 @@ IUSE="alsa -fluidalsa -fluidjack -fluidsdl -fluidoss -fluidpipewire -fluidportau
 
 KEYWORDS="~amd64 ~x86"
 CDEPEND="dev-java/swt:4.10[cairo]
+	media-libs/suil
 	alsa? ( media-libs/alsa-lib )
 	fluidsynth? ( media-sound/fluidsynth )
 	fluidalsa? ( media-sound/fluidsynth[alsa] )
@@ -121,7 +122,6 @@ src_install() {
 	doins -r share/mime
 	doins -r share/pixmaps
 	insopts -m 755
-	doins -r tuxguitar.sh
 	dobin "${FILESDIR}"/tuxguitar
 	dodoc doc/*
 	einstalldocs
