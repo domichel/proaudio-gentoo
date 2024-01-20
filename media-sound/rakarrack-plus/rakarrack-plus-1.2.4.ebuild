@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 # Use the default from CMakeLists.txt:
 IUSE="+altivec -carlap -debug +lv2 +nsm +optimization +rplus +sse +sse2 -sysex +vectorize"
 
-MDEPEND="dev-util/cmake
+MDEPEND="dev-build/cmake
 	>=media-libs/alsa-lib-0.9
 	media-libs/fontconfig
 	media-libs/libsamplerate
@@ -31,7 +31,7 @@ MDEPEND="dev-util/cmake
 	x11-libs/libXpm
 	x11-libs/libXrender
 	virtual/jack
-	
+
 	nsm? ( media-libs/liblo )"
 BDEPEND="carlap? ( dev-lang/python )
 	${MDEPEND}"
