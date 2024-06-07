@@ -1,0 +1,31 @@
+diff -ur tuxguitar-1.6.3beta2_o/desktop/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg tuxguitar-1.6.3beta2/desktop/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg
+--- tuxguitar-1.6.3beta2_o/desktop/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg	2024-06-05 00:28:01.318582420 +0200
++++ tuxguitar-1.6.3beta2/desktop/TuxGuitar-synth-gervill/share/tuxguitar-synth-gervill.cfg	2024-06-05 00:30:03.456573312 +0200
+@@ -1,2 +1,2 @@
+ ## Default Settings ##
+-tuxguitar-synth-gervill.soundbank.path=${tuxguitar.home.path}/share/soundfont/MagicSFver2.sf2
++tuxguitar-synth-gervill.soundbank.path=/usr/share/sounds/sf2/FluidR3_GM.sf2
+diff -ur tuxguitar-1.6.3beta2_o/desktop/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg tuxguitar-1.6.3beta2/desktop/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg
+--- tuxguitar-1.6.3beta2_o/desktop/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg	2024-06-05 00:28:01.386582415 +0200
++++ tuxguitar-1.6.3beta2/desktop/build-scripts/common-resources/common-linux/dist/tuxguitar-fluidsynth.cfg	2024-06-05 00:32:09.760563893 +0200
+@@ -1,6 +1,6 @@
+ # tuxguitar-fluidsynth settings for Linux
+ soundfont.count=1
+-soundfont.path0=${tuxguitar.home.path}/share/soundfont/MagicSFver2.sf2
++soundfont.path0=/usr/share/sounds/sf2/FluidR3_GM.sf2
+ 
+ synth.gain=1.1
+ synth.chorus.active=yes
+diff -ur tuxguitar-1.6.3beta2_o/desktop/build-scripts/tuxguitar-windows-swt-x86_64/pom.xml tuxguitar-1.6.3beta2/desktop/build-scripts/tuxguitar-windows-swt-x86_64/pom.xml
+--- tuxguitar-1.6.3beta2_o/desktop/build-scripts/tuxguitar-windows-swt-x86_64/pom.xml	2024-06-05 00:28:01.398582414 +0200
++++ tuxguitar-1.6.3beta2/desktop/build-scripts/tuxguitar-windows-swt-x86_64/pom.xml	2024-06-05 00:34:33.937553142 +0200
+@@ -343,9 +343,6 @@
+ 								<copy todir="${project.build.directory}/${project.finalName}/dist" overwrite="true">
+ 									<fileset dir="${project.rootPath}/TuxGuitar/dist/" />
+ 								</copy>
+-								<copy todir="${project.build.directory}/${project.finalName}/share/soundfont" overwrite="true">
+-									<fileset dir="${project.rootPath}/TuxGuitar-resources/resources/soundfont" />
+-								</copy>
+ 
+ 								<copy todir="${project.build.directory}/${project.finalName}" overwrite="true">
+ 									<fileset dir="../common-resources/common" />

@@ -21,6 +21,27 @@
 		- Imports and exports gp3,gp4 and gp5 files
 	</longdescription>
 	<use>
+		<flag name="fluidalsa">
+			Use ALSA with the fluidsynth plugin.
+		</flag>
+		<flag name="fluidjack">
+			Use JACK with the fluidsynth plugin.
+		</flag>
+		<flag name="fluidoss">
+			Use OSS with the fluidsynth plugin.
+		</flag>
+		<flag name="fluidpipewire">
+			Use pipewire with the fluidsynth plugin.
+		</flag>
+		<flag name="fluidportaudio">
+			Use portaudio with the fluidsynth plugin.
+		</flag>
+		<flag name="fluidpulseaudio">
+			Use pulseaudio with the fluidsynth plugin.
+		</flag>
+		<flag name="fluidsdl">
+			Use sdl audio with the fluidsynth plugin.
+		</flag>
 		<flag name="fluidsynth">
 			Enables Fluidsynth MIDI software synthesis (with external sound fonts). 
 			JSA must be disabled in the plug-ins menu to use this.

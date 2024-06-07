@@ -71,7 +71,7 @@ proaudio-attic Packages List
 - media-sound/silentjack/silentjack-0.3.ebuild: "SilentJack is a silence/dead air detector for the Jack Audio Connection Kit"
 - media-sound/sysexxer-ng/sysexxer-ng-9999.ebuild: "Universal tool to exchange MIDI system-exclusive data"
 - media-sound/tetraproc/tetraproc-0.8.6.ebuild: "A-format to B-format signal converter for tetrahedral Ambisonic
-- media-sound/tuxguitar/tuxguitar-1.6.0.ebuild: "TuxGuitar is a multitrack guitar tablature editor and player written in Java-SWT"
+- media-sound/tuxguitar/tuxguitar-1.6.3.ebuild: "TuxGuitar is a multitrack guitar tablature editor and player written in Java-SWT"
 - media-sound/waon/waon-0.10.ebuild: "A wave to notes transcriber, able to transcribe wav to midi"
 - media-sound/waonc/waonc-9999.ebuild: "A wave to notes transcriber, able to transcribe wav to midi"
 - media-sound/yass/yass-0.1.0.ebuild: "Yet Another Scrolling Scope features jack input, variable scrolling speed and automatic gain control"
