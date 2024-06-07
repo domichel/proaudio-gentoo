@@ -6,15 +6,15 @@ EAPI="8"
 inherit xdg
 
 DESCRIPTION="TuxGuitar is a multitrack guitar tablature editor and player written in Java-SWT"
-HOMEPAGE="http://www.tuxguitar.com.ar/"
-SRC_URI="https://github.com/helge17/tuxguitar/archive/refs/tags/1.6.3.tar.gz -> tuxguitar-1.6.3.tar.gz
-	https://github.com/domichel/GenCool/raw/master/distfiles/tuxguitar-1.6.3_bdepends.tar.bz2"
+HOMEPAGE="https://www.tuxguitar.app/"
+SRC_URI="https://github.com/helge17/tuxguitar/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
+	https://github.com/domichel/GenCool/raw/master/distfiles/tuxguitar-${PV}_bdepends.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-IUSE="alsa -fluidalsa -fluidjack -fluidsdl -fluidoss -fluidpipewire -fluidportaudio -fluidpulseaudio fluidsynth oss timidity"
+IUSE="alsa fluidalsa fluidjack fluidsdl fluidoss fluidpipewire fluidportaudio fluidpulseaudio fluidsynth oss timidity"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 CDEPEND="dev-java/swt:4.10[cairo]
 	>=dev-qt/qtbase-6.6
 	media-libs/lilv
@@ -40,7 +40,6 @@ RDEPEND=">=virtual/jre-1.5
 	)
 	${CDEPEND}"
 
-BDEPEND="dev-java/maven-bin"
 DEPEND=">=virtual/jdk-1.5
 	${CDEPEND}"
 BDEPEND="${DEPEND}
@@ -49,6 +48,8 @@ BDEPEND="${DEPEND}
 
 PATCHES=( "${FILESDIR}"/replace-soundfont_1.6.3.patch )
 #S="${WORKDIR}/${PN}-1.6.3"
+BUILDSCRIPTD="desktop/build-scripts/tuxguitar-linux-swt"
+TARGETD="target/tuxguitar-9.99-SNAPSHOT-linux-swt"
 
 check_extra_config() {
 	eerror	"The USE flags fluidalsa, fluidjack, fluidsdl,"
@@ -82,37 +83,42 @@ pkg_pretend() {
 }
 
 src_unpack() {
-	unpack tuxguitar-1.6.3.tar.gz
+	unpack "${P}".tar.gz
 	# emerge don't have access to the network. To make this archive, as a regular user,
 	# unpack tuxguitar archive, go into the wanted build-script directory and run
 	# 	mvn -e clean verify -P native-modules
 	# The downloaded bdepends will be into $HOME/.m2
 	# Add .m2/repository/settings.xml from the preceding version archive and pack the .m2 directory.
 	# Edit the following sed call if the $HOME value is not the same.
-	unpack tuxguitar-1.6.3_bdepends.tar.bz2
-	sed -i -e "s:/home/dom/softs/Gentoo/TuxGuitar/.m2:${WORKDIR}/.m2/repository:" "${WORKDIR}"/.m2/repository/settings.xml
+	unpack "${P}"_bdepends.tar.bz2
+	sed -i -e "s:/home/dom/softs/Gentoo/TuxGuitar/.m2:${WORKDIR}/.m2/repository:" \
+		"${WORKDIR}"/.m2/repository/settings.xml || die "sed 1 failed"
 	# VST2 is deprecated, use only native software
 }
 
 src_compile() {
-	cd "${S}/desktop/build-scripts/tuxguitar-linux-swt"
-	mvn -e clean verify -s "${WORKDIR}"/.m2/repository/settings.xml -P native-modules
+	cd "${S}/${BUILDSCRIPTD}" || die "cd 1 failed"
+	mvn -e clean verify -s "${WORKDIR}"/.m2/repository/settings.xml -P native-modules || die "mvn failed"
 	cd "${S}"
-	sed -i -e "s:Icon=.*:Icon=tuxguitar:" desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-9.99-SNAPSHOT-linux-swt/share/applications/tuxguitar.desktop
-	rm desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-9.99-SNAPSHOT-linux-swt/doc/INSTALL.md
-	rm desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-9.99-SNAPSHOT-linux-swt/doc/LICENSE
+	sed -i -e "s:Icon=.*:Icon=tuxguitar:" \
+		"${BUILDSCRIPTD}/${TARGETD}"/share/applications/tuxguitar.desktop \
+		|| die "sed 2 failed"
+	rm "${BUILDSCRIPTD}/${TARGETD}"/doc/INSTALL.md \
+		|| die "rm 1 failed"
+	rm "${BUILDSCRIPTD}/${TARGETD}"/doc/LICENSE || die "rm 2 failed"
 	# The default audio driver is hardcoded, set it to the one the user want to use:
-	DRIVERF="desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-9.99-SNAPSHOT-linux-swt/dist/tuxguitar-fluidsynth.cfg"
-	if use fluidalsa; then sed -i -e "s:pulseaudio:alsa:" "${DRIVERF}"; fi
-	if use fluidjack; then sed -i -e "s:pulseaudio:jack:" "${DRIVERF}"; fi
-	if use fluidsdl; then sed -i -e "s:pulseaudio:sdl2:" "${DRIVERF}"; fi
-	if use fluidoss; then sed -i -e "s:pulseaudio:oss:" "${DRIVERF}"; fi
-	if use fluidpipewire; then sed -i -e "s:pulseaudio:pipewire:" "${DRIVERF}"; fi
-	if use fluidportaudio; then sed -i -e "s:pulseaudio:portaudio:" "${DRIVERF}"; fi
+	DRIVERF="${BUILDSCRIPTD}/${TARGETD}/dist/tuxguitar-fluidsynth.cfg"
+	if use fluidalsa; then sed -i -e "s:pulseaudio:alsa:" "${DRIVERF}" || die "sed driver failed" ; fi
+	if use fluidjack; then sed -i -e "s:pulseaudio:jack:" "${DRIVERF}" || die "sed driver failed"; fi
+	if use fluidsdl; then sed -i -e "s:pulseaudio:sdl2:" "${DRIVERF}" || die "sed driver failed"; fi
+	if use fluidoss; then sed -i -e "s:pulseaudio:oss:" "${DRIVERF}" || die "sed driver failed"; fi
+	if use fluidpipewire; then sed -i -e "s:pulseaudio:pipewire:" "${DRIVERF}" || die "sed driver failed"; fi
+	if use fluidportaudio; then sed -i -e "s:pulseaudio:portaudio:" "${DRIVERF}" || die "sed driver failed"; fi
 }
 
 src_install() {
-	cd "${S}/desktop/build-scripts/tuxguitar-linux-swt/target/tuxguitar-9.99-SNAPSHOT-linux-swt"
+	cd "${S}/${BUILDSCRIPTD}/${TARGETD}" \
+		|| die "cd install dir failed"
 	insinto /usr/share/tuxguitar
 	doins tuxguitar.sh
 	doins -r dist

@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-		<email>dracwyrm@gentoo.org</email>
-		<name>Jonathan Scruggs</name>
+		<email>someone@gentoo.org</email>
+		<name>Someone</name>
 	</maintainer>
 	<longdescription>
 		A multitrack tablature editor and player that allows you to
@@ -20,6 +20,9 @@
 		- Tempo management
 		- Imports and exports gp3,gp4 and gp5 files
 	</longdescription>
+	<upstream>
+		<remote-id type="github">helge17/tuxguitar</remote-id>
+	</upstream>
 	<use>
 		<flag name="fluidalsa">
 			Use ALSA with the fluidsynth plugin.
@@ -47,7 +50,4 @@
 			JSA must be disabled in the plug-ins menu to use this.
 		</flag>
 	</use>
-	<upstream>
-		<remote-id type="sourceforge">tuxguitar</remote-id>
-	</upstream>
 </pkgmetadata>
