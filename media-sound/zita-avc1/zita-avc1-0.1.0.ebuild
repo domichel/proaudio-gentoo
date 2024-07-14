@@ -1,9 +1,8 @@
-# Copyright 1999-2022 Gentoo Foundation
+# Copyright 1999-2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=7
-inherit eutils toolchain-funcs
+EAPI=8
+inherit toolchain-funcs
 
 DESCRIPTION="Analog style vocoder inspiredby the EMS vocoders"
 HOMEPAGE="http://kokkinizita.linuxaudio.org/linuxaudio/"
