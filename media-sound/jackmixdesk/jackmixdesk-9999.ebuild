@@ -1,6 +1,5 @@
-# Copyright 1999-2021 Gentoo Foundation
+# Copyright 1999-2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI="7"
 
@@ -27,10 +26,11 @@ IUSE=""
 DOCS=( AUTHORS ChangeLog README TODO )
 
 RDEPEND="virtual/jack
-	=x11-libs/gtk+-2*
+	>=gnome-base/libgnomecanvas-2.30
 	>=media-libs/liblo-0.25
 	>=net-dns/libidn-1.13
-	media-sound/lash"
+	media-sound/lash
+	=x11-libs/gtk+-2*"
 DEPEND="${RDEPEND}
 	>=dev-libs/libxml2-2.6.28
 	virtual/pkgconfig"
