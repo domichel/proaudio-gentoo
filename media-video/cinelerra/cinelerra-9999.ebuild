@@ -9,6 +9,9 @@ DESCRIPTION="The most advanced non-linear video editor and compositor"
 HOMEPAGE="http://www.cinelerra.org/"
 #EGIT_REPO_URI="git://git.cinelerra-cv.org/CinelerraCV.git"
 EGIT_REPO_URI="git://git.cinelerra-gg.org/goodguy/cinelerra.git"
+SRC_URI="https://cinelerra-gg.org/download/CinelerraGG_Manual.pdf
+	https://cinelerra-gg.org/download/releasenotes.pdf
+	https://cinelerra-gg.org/download/CinelerraGG_Quickstart.pdf"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -77,9 +80,13 @@ DEPEND="${RDEPEND}
 	cpu_flags_x86_mmx? ( dev-lang/nasm )
 	sys-apps/texinfo
 	sys-libs/zlib
-	dev-util/cmake"
+	dev-build/cmake"
 
 S="${WORKDIR}/${P}/${PN}-5.1"
+DOCS=( "${DISTDIR}"/CinelerraGG_Manual.pdf
+	"${DISTDIR}"/releasenotes.pdf
+	"${DISTDIR}"/CinelerraGG_Quickstart.pdf
+)
 
 pkg_pretend() {
 	check-reqs_pkg_pretend
@@ -111,6 +118,7 @@ src_configure() {
 
 src_install() {
 	make DESTDIR="${D}" install || die
+	einstalldocs
 }
 
 pkg_postinst() {

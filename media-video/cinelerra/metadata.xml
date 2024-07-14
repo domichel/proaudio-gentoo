@@ -6,6 +6,7 @@
 		<name>Gentoo Video project</name>
 	</maintainer>
 	<use>
+		<flag name="commercial">Commercial capture support</flag>
 		<flag name="festival">app-accessibility/festival support</flag>
 		<flag name="git_ffmpeg">Use ffmpeg git</flag>
 	</use>
