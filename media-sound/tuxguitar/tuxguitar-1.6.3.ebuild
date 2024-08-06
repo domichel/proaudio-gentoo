@@ -15,6 +15,7 @@ SLOT="0"
 IUSE="alsa fluidalsa fluidjack fluidsdl fluidoss fluidpipewire fluidportaudio fluidpulseaudio fluidsynth oss timidity"
 
 KEYWORDS="~amd64"
+RESTRICT="network-sandbox"
 CDEPEND="dev-java/swt:4.10[cairo]
 	>=dev-qt/qtbase-6.6
 	media-libs/lilv
@@ -98,6 +99,7 @@ src_unpack() {
 
 src_compile() {
 	cd "${S}/${BUILDSCRIPTD}" || die "cd 1 failed"
+	ewarn "FEATURE 'network-sandbox' breaks maven downloads so it was disabled !"
 	mvn -e clean verify -s "${WORKDIR}"/.m2/repository/settings.xml -P native-modules || die "mvn failed"
 	cd "${S}"
 	sed -i -e "s:Icon=.*:Icon=tuxguitar:" \
