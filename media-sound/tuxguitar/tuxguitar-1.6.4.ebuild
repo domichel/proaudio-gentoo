@@ -90,7 +90,7 @@ src_unpack() {
 		unpack swt-4.26-gtk-linux-x86_64.zip
 	fi
 	mkdir -p "${WORKDIR}"/.m2/repository/ || die "sed mkdir failed"
-	cp "${FILESDIR}/settings.xml" "${WORKDIR}"/.m2/repository//settings.xml
+	cp "${FILESDIR}/settings.xml" "${WORKDIR}"/.m2/repository/settings.xml || die "cp failed"
 	sed -i -e "s:/home/dom/softs/Gentoo/TuxGuitar/.m2:${WORKDIR}/.m2/repository:" \
 		"${WORKDIR}"/.m2/repository/settings.xml || die "sed 1 failed"
 	# VST2 is deprecated, use only native software
