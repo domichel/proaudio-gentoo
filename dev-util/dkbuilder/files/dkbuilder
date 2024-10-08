@@ -1,0 +1,45 @@
+#!/bin/bash
+
+usage() {
+    echo ""
+    echo "dkbuilder - install and create the files necessary to run the dkbuilder docker environment."
+    echo ""
+    echo "Synopsis"
+    echo "   dkbuilder PATH"
+    echo "where PATH is the destination directory. It must be relative to the current directry. \
+	    If it don't exist, it will be created."
+    echo ""
+    echo "Example"
+    echo "To install the dkbuilder into the current directory, run:"
+    echo "   dkbuilder ."
+}
+
+if [ ! -n "$1" ]; then
+    usage
+    exit 0
+else
+    echo "Installing the dkbuilder files into $1"
+    mkdir -p "$1"
+    cd "$1"
+    cp /usr/share/dkbuilder/* .
+    if [ -d guitarix ]; then
+	cd guitarix
+	git pull
+	cd ..
+    else
+        git clone https://github.com/brummer10/guitarix.git
+    fi
+    if [ -x run.dkbuilder ]; then
+	./run.dkbuilder
+    else
+	./docker-dkbuilder "$(pwd)/guitarix"
+    fi
+fi
+
+echo "To update dkbuilder git sources, re-run this script with:"
+echo "   cd \"$(pwd)\""
+echo "   dkbuilder \"$1\""
+echo ""
+echo "To run dkbuilder without updating it, run:"
+echo "   cd \"$(pwd)\""
+echo "   ./run.dkbuilder"
