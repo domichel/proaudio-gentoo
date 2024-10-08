@@ -27,8 +27,8 @@ src_install() {
 		doexe add_* docker-dkbuilder
 		into /usr
 		dobin "${FILESDIR}/dkbuilder"
-		elog "dkbuilder is a script and associated files that let You install the dkbuilder \
-docker environment into the directory of your choice."
+		elog "dkbuilder is a script and associated files that let You install the dkbuilder"
+		elog "docker environment into the directory of your choice."
 		elog "Just run 'dkbuilder' and it will show You what to do."
 		elog ""
 		elog "For advice and support, check https://linuxmusicians.com/viewtopic.php?f=44&t=19586"
