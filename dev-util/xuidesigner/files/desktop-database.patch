@@ -1,0 +1,10 @@
+--- xuidesigner-9999/XUiDesigner/Makefile.orig	2024-10-08 02:24:23.122073083 +0200
++++ xuidesigner-9999/XUiDesigner/Makefile	2024-10-08 02:24:42.747090799 +0200
+@@ -133,7 +133,6 @@
+ 				cp $(LANGS)/$(EXEC_NAME).mo $(DESTDIR)$(SHARE_DIR)/$(LANGS); \
+ 			fi \
+ 	fi
+-	$(QUIET)update-desktop-database || true
+ 	@$(B_ECHO) "=================== DONE =======================$(reset)"
+ else
+ 	@$(R_ECHO) ". . , you must build first$(reset)"
