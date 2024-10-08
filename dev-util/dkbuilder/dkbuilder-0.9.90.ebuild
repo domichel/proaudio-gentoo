@@ -18,6 +18,7 @@ IUSE=""
 DEPEND=""
 RDEPEND="app-containers/docker
 	app-shells/bash
+	dev-vcs/git
 "
 
 src_install() {
