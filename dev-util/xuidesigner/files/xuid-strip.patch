@@ -1,0 +1,24 @@
+diff '--color=auto' -ur xuidesigner-9999-orig/Makefile xuidesigner-9999/Makefile
+--- xuidesigner-9999-orig/Makefile	2024-10-09 17:20:30.187822195 +0200
++++ xuidesigner-9999/Makefile	2024-10-09 17:21:01.374834387 +0200
+@@ -26,7 +26,7 @@
+ libxputty: check-and-reinit-submodules
+ ifneq ($(MAKECMDGOALS),debug)
+ 	@exec $(MAKE) --no-print-directory -j 1 -C $@ $(MAKECMDGOALS) CFLAGS='-O3 $(DISTRO_CFLAGS) -D_FORTIFY_SOURCE=2 -Wall \
+-	-fstack-protector -fno-ident -fno-asynchronous-unwind-tables -s -DNDEBUG -Wno-unused-result'
++	-fstack-protector -fno-ident -fno-asynchronous-unwind-tables -DNDEBUG -Wno-unused-result'
+ else
+ 	@exec $(MAKE) --no-print-directory -j 1 -C $@ $(MAKECMDGOALS)
+ endif
+diff '--color=auto' -ur xuidesigner-9999-orig/XUiDesigner/Makefile xuidesigner-9999/XUiDesigner/Makefile
+--- xuidesigner-9999-orig/XUiDesigner/Makefile	2024-10-09 17:20:30.189822196 +0200
++++ xuidesigner-9999/XUiDesigner/Makefile	2024-10-09 17:26:21.650959594 +0200
+@@ -44,7 +44,7 @@
+ 	LDFLAGS += -fPIC -Wl,-z,noexecstack -Wl,--no-undefined -I./include/ -I../libxputty/libxputty/include/ \
+ 	`pkg-config --cflags --libs cairo x11 lilv-0` -lm -lpthread
+ 	MY_CFLAGS += -O3 $(CFLAGS) -D_FORTIFY_SOURCE=2 -Wall -Wextra -fstack-protector -fno-ident -Wno-unused-result \
+-	-fno-asynchronous-unwind-tables -s -DNDEBUG -DSHARE_DIR=\"$(SHARE_DIR)\"
++	-fno-asynchronous-unwind-tables -DNDEBUG -DSHARE_DIR=\"$(SHARE_DIR)\"
+ 	# -pedantic -Wextra -Wshadow -Wpadded -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes
+ 	DEBUG_MY_CFLAGS += $(CFLAGS) -g -DDEBUG -DSHARE_DIR=\"$(SHARE_DIR)\"
+ 	# invoke build files

@@ -30,12 +30,10 @@ BDEPEND="
 "
 
 DOCS=( README.md README.developer.md )
-PATCHES=( "${FILESDIR}"/libxputty-cflags.patch
-	"${FILESDIR}"/desktop-database.patch )
+PATCHES=( "${FILESDIR}"/desktop-database.patch
+	"${FILESDIR}"/xuid-strip.patch )
 
 src_compile() {
-	#sed work fine but xuidesigner is still stripped...
-	sed -i -e 's:--strip-all::g' -e '/STRIP/d' XUiDesigner/src/XUiGenerator.c || die "sed failed"
 	emake QUIET="" AR=$(tc-getAR) LD=$(tc-getLD) CC=$(tc-getCC) -j1 INSTALL_DIR=/usr/lib64
 }
 
