@@ -1,6 +1,8 @@
 proaudio-attic Packages List
 ############################
 - dev-lang/faust/faust-0.9.90.ebuild: "Faust AUdio STreams is a programming language/compiler for fast DSP algorythms."
+- dev-util/dkbuilder/dkbuilder-0.9.90.ebuild: "From circuit to lv2 plugin"
+- dev-util/xuidesigner/xuidesigner-9999.ebuild: "A WYSIWYG LV2 GUI/Plugin creator tool"
 - media-libs/calf_big_styles/calf_big_styles-1.0.1.ebuild: "Big Styles for the Calf Audio Plugins"
 - media-libs/juce/juce-7.0.6.ebuild: "JUCE is class library for developing cross-platform applications."
 - media-libs/vst-sdk/vst-sdk-2.3-r3.ebuild: "Steinberg VST Plug-Ins SDK 2.3 - win32"
@@ -28,7 +30,7 @@ proaudio-attic Packages List
 - media-sound/4deckradio/4deckradio-9999.ebuild: "Multi-deck media playback for radio stations"
 - media-sound/aliki/aliki-0.3.0-r1.ebuild: "An integrated system for Impulse Response measurements"
 - media-sound/alsaplayer/alsaplayer-9999.ebuild: "Media player primarily utilising ALSA"
-- media-sound/ambdec/ambdec-0.7.1-r1.ebuild: "An Ambisonic decoder for first and second order"
+- media-sound/ambdec/ambdec-0.7.1-r2.ebuild: "An Ambisonic decoder for first and second order"
 - media-sound/amidimap/amidimap-0.1.1-r1.ebuild: "Read in, process and output MIDI events."
 - media-sound/aseqjoy/aseqjoy-0.0.2.ebuild: "Joystick to ALSA MIDI sequencer converter."
 - media-sound/drc/drc-3.2.3.ebuild: "Generate digital room correction FIR filters for use in realtime
@@ -72,6 +74,7 @@ proaudio-attic Packages List
 - media-sound/sysexxer-ng/sysexxer-ng-9999.ebuild: "Universal tool to exchange MIDI system-exclusive data"
 - media-sound/tetraproc/tetraproc-0.8.6.ebuild: "A-format to B-format signal converter for tetrahedral Ambisonic
 - media-sound/tuxguitar/tuxguitar-1.6.3.ebuild: "TuxGuitar is a multitrack guitar tablature editor and player written in Java-SWT"
+- media-sound/tuxguitar/tuxguitar-1.6.4.ebuild: "TuxGuitar is a multitrack guitar tablature editor and player written in Java-SWT"
 - media-sound/waon/waon-0.10.ebuild: "A wave to notes transcriber, able to transcribe wav to midi"
 - media-sound/waonc/waonc-9999.ebuild: "A wave to notes transcriber, able to transcribe wav to midi"
 - media-sound/yass/yass-0.1.0.ebuild: "Yet Another Scrolling Scope features jack input, variable scrolling speed and automatic gain control"

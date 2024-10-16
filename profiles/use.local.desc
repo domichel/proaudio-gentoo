@@ -30,9 +30,17 @@ media-sound/rakarrack-plus:sysex - Enable Experimental Sysex preset save support
 media-sound/rakarrack-plus:vectorize - Enable vectorize
 media-sound/rsound:alsammod - Build the ALSA rsound module
 media-sound/rsound:vlcmod - Build the vlc module
+media-sound/tuxguitar:fluidalsa - Use ALSA with the fluidsynth plugin.
+media-sound/tuxguitar:fluidjack - Use JACK with the fluidsynth plugin.
+media-sound/tuxguitar:fluidoss - Use OSS with the fluidsynth plugin.
+media-sound/tuxguitar:fluidpipewire - Use pipewire with the fluidsynth plugin.
+media-sound/tuxguitar:fluidportaudio - Use portaudio with the fluidsynth plugin.
+media-sound/tuxguitar:fluidpulseaudio - Use pulseaudio with the fluidsynth plugin.
+media-sound/tuxguitar:fluidsdl - Use sdl audio with the fluidsynth plugin.
 media-sound/tuxguitar:fluidsynth - Enables Fluidsynth MIDI software synthesis (with external sound fonts). JSA must be disabled in the plug-ins menu to use this.
 media-sound/waon:pv - Build and install the phase vocoder pv binary
 media-sound/waonc:pv - Build and install the phase vocoder pv binary
+media-video/cinelerra:commercial - Commercial capture support
 media-video/cinelerra:festival - app-accessibility/festival support
 media-video/cinelerra:git_ffmpeg - Use ffmpeg git
 x11-themes/fvwm-crystal:amixer - Enable alsamixer support (alsa-sound/alsa-utils)
