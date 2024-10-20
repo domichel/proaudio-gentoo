@@ -4,7 +4,7 @@
 EAPI=8
 RESTRICT=mirror
 
-PYTHON_COMPAT=( python3_{8..11} )
+PYTHON_COMPAT=( python3_{8..13} )
 inherit readme.gentoo-r1 python-single-r1
 
 DESCRIPTION="Configurable FVWM theme with transparency and freedesktop compatible menu"

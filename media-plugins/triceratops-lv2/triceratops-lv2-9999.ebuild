@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9,10,11,12} )
+PYTHON_COMPAT=( python3_{9..13} )
 PYTHON_REQ_USE="threads(+)"
 inherit git-r3 multilib python-any-r1 waf-utils
 

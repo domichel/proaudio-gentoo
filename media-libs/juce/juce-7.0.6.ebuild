@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9,10,11,12} )
+PYTHON_COMPAT=( python3_{9..13} )
 inherit python-single-r1 cmake desktop xdg-utils
 # flag-o-matic
 CMAKE_BUILD_TYPE=Release
