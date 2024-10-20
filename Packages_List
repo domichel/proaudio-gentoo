@@ -37,7 +37,6 @@ proaudio-attic Packages List
 - media-sound/ebumeter/ebumeter-0.5.1.ebuild: "Loudness measurement according to EBU-R128"
 - media-sound/foo-yc20/foo-yc20-1.3.0.ebuild: "YC-20 divide-down combo organ emulator with lv2 plugin"
 - media-sound/ghostess/ghostess-20210101.ebuild: "graphical DSSI host, based on jack-dssi-host"
-- media-sound/gwc/gwc-0.22.06.ebuild: "Gnome Wave Cleaner"
 - media-sound/iannix/iannix-9999.ebuild: "A Graphical Open-Source Sequencer For Digital Art"
 - media-sound/jack_delay/jack_delay-0.4.2.ebuild: "measures the latency between two jack ports with subsample accuracy"
 - media-sound/jack_oscrolloscope/jack_oscrolloscope-0.7.ebuild: "Simple waveform viewer for JACK"
