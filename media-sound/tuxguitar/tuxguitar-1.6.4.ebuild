@@ -12,7 +12,7 @@ SRC_URI="https://github.com/helge17/tuxguitar/archive/refs/tags/${PV}.tar.gz -> 
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-IUSE="alsa fluidalsa fluidjack fluidsdl fluidoss fluidpipewire fluidportaudio fluidpulseaudio fluidsynth oss timidity"
+IUSE="alsa fluidalsa fluidjack fluidsdl fluidoss fluidpipewire fluidportaudio fluidpulseaudio fluidsynth html oss timidity"
 
 KEYWORDS="~amd64"
 RESTRICT="network-sandbox"
@@ -20,7 +20,7 @@ CDEPEND=">=dev-java/swt-4.26[cairo]
 	>=dev-qt/qtbase-6.6
 	media-libs/lilv
 	media-libs/suil
-	>=net-libs/webkit-gtk-2.42
+	html? ( >=net-libs/webkit-gtk-2.42 )
 	alsa? ( media-libs/alsa-lib )
 	fluidsynth? ( media-sound/fluidsynth )
 	fluidalsa? ( media-sound/fluidsynth[alsa] )
@@ -47,7 +47,7 @@ BDEPEND="${DEPEND}
 	app-arch/unzip
 	dev-java/maven-bin"
 
-PATCHES=( "${FILESDIR}"/replace-soundfont_1.6.3.patch )
+PATCHES=( "${FILESDIR}"/replace-soundfont_1.6.4.patch )
 BUILDSCRIPTD="desktop/build-scripts/tuxguitar-linux-swt"
 TARGETD="target/tuxguitar-9.99-SNAPSHOT-linux-swt"
 

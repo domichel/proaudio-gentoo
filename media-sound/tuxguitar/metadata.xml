@@ -49,5 +49,8 @@
 			Enables Fluidsynth MIDI software synthesis (with external sound fonts). 
 			JSA must be disabled in the plug-ins menu to use this.
 		</flag>
+		<flag name="html">
+			Use webkit-gtk instead of the system browser to display the help.
+		</flag>
 	</use>
 </pkgmetadata>
