@@ -1,11 +1,10 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 # install proprietary Steinberg VST SDK 2.4 to "/opt/${MY_P}"
 # bug #61290
 
-EAPI="7"
-inherit exteutils
+EAPI="8"
 
 RESTRICT="strip fetch"
 

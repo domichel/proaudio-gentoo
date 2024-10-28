@@ -3,8 +3,6 @@
 
 EAPI=8
 
-inherit
-
 DESCRIPTION="From circuit to lv2 plugin"
 HOMEPAGE="https://guitarix.org/"
 SRC_URI="https://github.com/domichel/proaudio-gentoo/raw/refs/heads/main/distfiles/${P}.tar.gz"

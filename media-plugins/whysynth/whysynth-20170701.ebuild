@@ -1,8 +1,7 @@
-# Copyright 1999-2023 Gentoo Foundation
+# Copyright 1999-2024 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="8"
-inherit
 
 DESCRIPTION="A versatile DSSI Softsynth Plugin"
 HOMEPAGE="http://smbolton.com/whysynth.html"
