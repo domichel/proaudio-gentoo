@@ -20,11 +20,12 @@ RDEPEND="virtual/jack
 
 DEPEND="${RDEPEND}"
 
-src_configure(){
+src_prepare(){
+	eapply_user
 	"${S}/autogen.sh" || die
 }
 
 src_install(){
 	make DESTDIR="${D}" install || die "install failed"
-	dodoc README AUTHORS TODO ChangeLog
+	dodoc README.md AUTHORS ChangeLog
 }
