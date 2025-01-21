@@ -30,7 +30,7 @@ RDEPEND="media-libs/libsndfile
 DEPEND="${RDEPEND}
 	>=dev-libs/glib-2.10.1
 	virtual/pkgconfig
-	doc? ( app-doc/doxygen )
+	doc? ( app-text/doxygen )
 	nls? ( sys-devel/gettext )
 	gtk? ( >=x11-libs/gtk+-2.8 )
 	systray? ( >=x11-libs/gtk+-2.10 )"
