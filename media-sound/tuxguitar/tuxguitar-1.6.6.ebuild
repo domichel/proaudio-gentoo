@@ -50,7 +50,7 @@ BDEPEND="${DEPEND}
 	app-arch/unzip
 	dev-java/maven-bin"
 
-PATCHES=( "${FILESDIR}"/replace-soundfont_1.6.4.patch )
+PATCHES=( "${FILESDIR}"/replace-soundfont_${PV}.patch )
 BUILDSCRIPTD="desktop/build-scripts/tuxguitar-linux-swt"
 TARGETD="target/tuxguitar-9.99-SNAPSHOT-linux-swt"
 
