@@ -5,6 +5,9 @@ EAPI="8"
 
 inherit xdg
 
+# TODO: help needed, build using java instead of marvem, see
+#    https://bugs.gentoo.org/show_bug.cgi?id=914890#c16
+
 DESCRIPTION="TuxGuitar is a multitrack guitar tablature editor and player written in Java-SWT"
 HOMEPAGE="https://www.tuxguitar.app/"
 SRC_URI="https://github.com/helge17/tuxguitar/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
