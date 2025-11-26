@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=X42 Tuna Spectrum
-Type=Application
-Comment=A musical instrument tunerwith strobe characteristic in LV2 plugin format
-Exec=x42-tuna 1
-TryExec=x42-tuna 1
-Icon=x42-tuna
-Categories=AudioVideo;Audio;Engineering;

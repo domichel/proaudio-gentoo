@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=X42 MixTri
-Type=Application
-Comment=A matrix mixer & trigger processor intended to be used with sisco-lv2
-Exec=x42-mixtri
-TryExec=x42-mixtri
-Icon=x42-mixtri
-Categories=AudioVideo;Audio;Mixer;
