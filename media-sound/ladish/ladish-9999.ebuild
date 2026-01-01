@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..13} )
+PYTHON_COMPAT=( python3_{9..14} )
 PYTHON_REQ_USE='threads(+)'
 
 inherit flag-o-matic python-single-r1 waf-utils xdg-utils
@@ -14,15 +14,15 @@ inherit git-r3
 EGIT_REPO_URI="https://github.com/LADI/ladish"
 EGIT_BRANCH="1-stable"
 EGIT_COMMIT=7728d2d40e1c8eeb84b8605a411d9a83701d48b3
-KEYWORDS=""
 EGIT_SUBMODULES=()
-
 LICENSE="GPL-2"
+
 SLOT="0"
-RESTRICT="mirror"
+KEYWORDS=""
 
 IUSE="debug doc lash gtk"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+RESTRICT="mirror"
 
 RDEPEND="media-libs/alsa-lib
 	media-sound/jack2[dbus]
@@ -31,7 +31,7 @@ RDEPEND="media-libs/alsa-lib
 	lash? ( media-sound/lash )
 	${PYTHON_DEPS}"
 DEPEND="${RDEPEND}
-	doc? ( app-doc/doxygen )
+	doc? ( app-text/doxygen )
 	>=media-sound/jack2-2.21.0
 	virtual/pkgconfig"
 
