@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -6,46 +6,42 @@ EAPI=8
 PYTHON_COMPAT=( python3_{9..13} )
 PYTHON_REQ_USE='threads(+)'
 
-inherit flag-o-matic python-single-r1 waf-utils
+inherit flag-o-matic python-single-r1 waf-utils xdg-utils
 
 DESCRIPTION="LADI Session Handler - a session management system for JACK applications"
 HOMEPAGE="https://ladish.org"
-if [[ ${PV} == *9999 ]]; then
-	inherit git-r3
-	EGIT_REPO_URI="https://github.com/LADI/ladish.git"
-	EGIT_BRANCH="main"
-#	EGIT_BRANCH="1-stable"
-else
-	SRC_URI="https://github.com/LADI/ladish/archive/${P}.tar.gz"
-	KEYWORDS="~amd64"
-fi
+inherit git-r3
+EGIT_REPO_URI="https://github.com/LADI/ladish"
+EGIT_BRANCH="1-stable"
+EGIT_COMMIT=7728d2d40e1c8eeb84b8605a411d9a83701d48b3
+KEYWORDS=""
+EGIT_SUBMODULES=()
+
 LICENSE="GPL-2"
 SLOT="0"
 RESTRICT="mirror"
 
-IUSE="debug doc lash"
+IUSE="debug doc lash gtk"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="media-libs/alsa-lib
 	media-sound/jack2[dbus]
 	sys-apps/dbus
-	dev-libs/cdbus
 	dev-libs/expat
+	lash? ( media-sound/lash )
 	${PYTHON_DEPS}"
-DEPEND="${RDEPEND}"
-BDEPEND="
-	dev-util/intltool
-	virtual/pkgconfig
-
+DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )
-"
+	>=media-sound/jack2-2.21.0
+	virtual/pkgconfig"
 
-QA_SONAME=( ".*/libalsapid.so" )
+DOCS=( AUTHORS README.adoc NEWS )
+
+PATCHES=(
+)
 
 src_prepare()
 {
-	rm -rf ".git" || die "Failed to remove git dir"
-	sed -i -e "s/RELEASE = False/RELEASE = True/" wscript
 	append-cxxflags '-std=c++11'
 	default
 }
@@ -63,9 +59,12 @@ src_configure() {
 src_install() {
 	use doc && HTML_DOCS="${S}/build/default/html/*"
 	waf-utils_src_install
-	python_fix_shebang "${ED}"
 }
 
-pkg_preinst() {
-	rm "${ED}/usr/share/ladish/COPYING" || die "rm COPYING failed"
+pkg_postinst() {
+	xdg_icon_cache_update
+}
+
+pkg_postrm() {
+	xdg_icon_cache_update
 }
