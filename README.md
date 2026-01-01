@@ -14,10 +14,10 @@ We have several repositories we can use. The first one is
 the main tree (::gentoo).
 
 The second one is audio-overlay at
-    https://github.com/gentoo-audio/audio-overlay
+    https://github.com/gentoo-audio/audio-overlay but it is outdated now (doesn't work well with the main tree) and looking for maintainers.
 
 The third one is the overlay of decibel Linux at
-    https://github.com/Gentoo-Music-and-Audio-Technology/gentoostudio
+    https://github.com/Gentoo-Music-and-Audio-Technology/gentoostudio but it also is outdated.
 
 Another one is os-gentoo-overlay which provide LADI
 related stuffs for use on gentoo:
