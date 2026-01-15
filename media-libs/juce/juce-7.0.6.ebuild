@@ -25,7 +25,7 @@ REQUIRED_USE="( ${PYTHON_REQUIRED_USE} )"
 # debian fst-dev ?=? media-libs/vst-sdk
 # TODO: - fix the system libs patches
 RDEPEND="( ${PYTHON_DEPS} )
-	dev-util/cmake
+	dev-build/cmake
 	>=media-libs/alsa-lib-0.9
 	net-misc/curl
 	media-libs/flac
