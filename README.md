@@ -34,6 +34,31 @@ do have blockings in the form of variations of
 That imply they will block all the lash related software from
 the main tree.
 
+Kernel configuration
+====================
+For pro aaudio on linux, kernels patched with Ingo Molnard rt-patch was in heavy use in the past.
+It is provided by sys-kernel/rtsources, but with recent kernels, it is not needed to use it:
+```
+General setup
+---> Preemption Model ---> [*] Preemptible Kernel  (Low-Latency Desktop)
+```
+and that will work fine with a pro-audio gentoo workstation.
+
+The rt-patch was merged into vanilla and should be avaible into all vanilla based gentoo kernels.
+That provide a RTOS kernel with PREMPT_RT (Full premption).
+
+When a lower latency is needed:
+```
+General setup
+---> Preemption Model ---> [*] Preemptible Kernel (Low-Latency Desktop)
+[*] Fully Preemptible kernel (Real-Time)
+```
+and that should work fine with a pro-audio workstation and provide the lowest possible latency.
+
+PREMPT_RT and RT_CGROUP_SCHED are mutually exclusive. That fix was introduced in 2012 into linux-3.4.4-rt13. It is a work in progress from that time
+and they are working to a replacement of RT_CGROUP_SCHED by a better mecanism (look for the OSPM submits of 2025 and 2026 for more on that issue.).
+
+
 Installation of the overlays
 ============================
 audio-overlay and proaudio-gentoo can be installed via eselect:
