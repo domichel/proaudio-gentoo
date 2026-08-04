@@ -36,8 +36,8 @@ the main tree.
 
 Kernel configuration
 ====================
-For pro aaudio on linux, kernels patched with Ingo Molnard rt-patch was in heavy use in the past.
-It is provided by sys-kernel/rtsources, but with recent kernels, it is not needed to use it:
+For pro aaudio on linux, kernels patched with the rt-patch was in heavy use in the past.
+It is provided by sys-kernel/rtsources, but with recent kernels, it is no need to use it:
 ```
 General setup
 ---> Preemption Model ---> [*] Preemptible Kernel  (Low-Latency Desktop)
@@ -56,7 +56,7 @@ General setup
 and that should work fine with a pro-audio workstation and provide the lowest possible latency.
 
 PREMPT_RT and RT_CGROUP_SCHED are mutually exclusive. That fix was introduced in 2012 into linux-3.4.4-rt13. It is a work in progress from that time
-and they are working to a replacement of RT_CGROUP_SCHED by a better mecanism (look for the OSPM submits of 2025 and 2026 for more on that issue.).
+and they are working to a replacement of RT_CGROUP_SCHED by a better mecanism (look for the HCBS patchser and the OSPM submits in 2025 and 2026 for more on that issue.).
 
 
 Installation of the overlays
