@@ -36,14 +36,17 @@ the main tree.
 
 Kernel configuration
 ====================
-For pro aaudio on linux, kernels patched with the rt-patch was in heavy use in the past.
-It is provided by sys-kernel/rtsources, but with recent kernels, it is no need to use it:
+For pro audio on Linux, kernels patched with the rt-patch were heavily used in the past. This patch is provided by sys-kernel/rtsources, but with recent kernels, there is no need to use it anymore:
+
 ```
 General setup
 ---> Preemption Model ---> [*] Preemptible Kernel  (Low-Latency Desktop)
 ```
-and that will work fine with a pro-audio gentoo workstation.
+And that will work fine for a pro-audio Gentoo workstation.
 
+The rt-patch has been merged into vanilla and should be available in all vanilla-based Gentoo kernels. This provides a RTOS kernel with PREEMPT_RT (Full Preemption).
+
+When lower latency is needed:
 The rt-patch was merged into vanilla and should be avaible into all vanilla based gentoo kernels.
 That provide a RTOS kernel with PREMPT_RT (Full premption).
 
@@ -53,11 +56,9 @@ General setup
 ---> Preemption Model ---> [*] Preemptible Kernel (Low-Latency Desktop)
 [*] Fully Preemptible kernel (Real-Time)
 ```
-and that should work fine with a pro-audio workstation and provide the lowest possible latency.
+nd that should work fine for a pro-audio workstation and provide the lowest possible latency.
 
-PREMPT_RT and RT_CGROUP_SCHED are mutually exclusive. That fix was introduced in 2012 into linux-3.4.4-rt13. It is a work in progress from that time
-and they are working to a replacement of RT_CGROUP_SCHED by a better mecanism (look for the HCBS patchset and the OSPM submits in 2025 and 2026 for more on that issue.).
-
+PREEMPT_RT and RT_CGROUP_SCHED are mutually exclusive. This fix was introduced in 2012 in Linux 3.4.4-rt13. Work has been ongoing since that time, and developers are working on a replacement for RT_CGROUP_SCHED with a better mechanism (look for the HCBS patchset and the OSPM submissions in 2025 and 2026 for more on this issue).
 
 Installation of the overlays
 ============================
