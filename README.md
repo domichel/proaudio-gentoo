@@ -36,7 +36,9 @@ the main tree.
 
 Kernel configuration
 ====================
-For pro audio on Linux, kernels patched with the rt-patch were heavily used in the past. This patch is provided by sys-kernel/rtsources, but with recent kernels, there is no need to use it anymore:
+For pro audio on Linux, kernels patched with the rt-patch were heavily used in the past. This patch is provided by sys-kernel/rtsources, but for recent kernels and most pro-audio use cases, there is no need to use it anymore.The core PREEMPT_RT functionality has been merged into the mainline kernel and is available in all vanilla-based Gentoo kernels.
+
+For a standard pro-audio workstation, the following configuration is sufficient:
 
 ```
 General setup
@@ -44,17 +46,16 @@ General setup
 ```
 And that will work fine for a pro-audio Gentoo workstation.
 
-The rt-patch has been merged into vanilla and should be available in all vanilla-based Gentoo kernels. This provides a RTOS kernel with PREEMPT_RT (Full Preemption).
+When even lower latency is required, you can enable full real-time preemption:
 
-When lower latency is needed:
 ```
 General setup
 ---> Preemption Model ---> [*] Preemptible Kernel (Low-Latency Desktop)
 [*] Fully Preemptible kernel (Real-Time)
 ```
-And that should work fine for a pro-audio workstation and provide the lowest possible latency.
+This will provide the lowest possible latency.
 
-PREEMPT_RT and RT_CGROUP_SCHED are mutually exclusive. This fix was introduced in 2012 in Linux 3.4.4-rt13. Work has been ongoing since that time, and developers are working on a replacement for RT_CGROUP_SCHED with a better mechanism (look for the HCBS patchset and the OSPM submissions in 2025 and 2026 for more on this issue).
+Note that PREEMPT_RT and RT_CGROUP_SCHED are mutually exclusive. This fix was introduced in 2012 in Linux 3.4.4-rt13. Work has been ongoing since then, and developers are working on a replacement for RT_CGROUP_SCHED with a more robust mechanism (look for the HCBS patchset and the OSPM submissions in 2025 and 2026 for more on this issue).
 
 Installation of the overlays
 ============================
